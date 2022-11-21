@@ -4,6 +4,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily :{
+      'inter' : ['"inter"', 'sans-serif'],
+      'cinzel': [' "Cinzel Decorative"', 'cursive']
+    },
   },
   plugins: [],
 }

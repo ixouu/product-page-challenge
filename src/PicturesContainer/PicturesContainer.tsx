@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icons";
+import Modal from '../components/Modal/Modal'
 
 import productImg1 from "../assets/images/img1.webp";
 import productImg2 from "../assets/images/img2.webp";
@@ -10,49 +11,45 @@ import productImg5 from "../assets/images/img5.webp";
 import productImg6 from "../assets/images/img6.webp";
 
 const PicturesContainer = () => {
-	const pic1 = useRef<HTMLButtonElement>(null);
-	const pic2 = useRef<HTMLButtonElement>(null);
-	const pic3 = useRef<HTMLButtonElement>(null);
-	const pic4 = useRef<HTMLButtonElement>(null);
-	const pic5 = useRef<HTMLButtonElement>(null);
-	const pic6 = useRef<HTMLButtonElement>(null);
+
+
+  // state to define if the modal has to be display
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+
+  // state to define the picture to pass through modal's props
+  const [picture, setPicture] = useState("");
 
 	const pictures = [
 		{
 			src: productImg1,
-			ref: pic1,
 			alt: "Représentation du blous Umani",
 		},
 		{
 			src: productImg2,
-			ref: pic2,
 			alt: "Seconde représentation du blous Umani",
 		},
 		{
 			src: productImg3,
-			ref: pic3,
 			alt: "Quatrieme Représentation du blous Umani",
 		},
 		{
 			src: productImg4,
-			ref: pic4,
 			alt: "Quatrieme Représentation du blous Umani",
 		},
 		{
 			src: productImg5,
-			ref: pic5,
 			alt: "Cinquieme Représentation du blous Umani",
 		},
 		{
 			src: productImg6,
-			ref: pic6,
 			alt: "Sixieme Représentation du blous Umani",
 		},
 	];
 
   // function who's firing modal to display the picture in full size on click event
   const expandPicture = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    console.log(e.currentTarget.value)
+    setPicture(e.currentTarget.value);
+    !modalIsOpen? setModalIsOpen(true) : setModalIsOpen(false);
   }
 
 	return (
@@ -99,7 +96,6 @@ const PicturesContainer = () => {
 						/>
               <button
               value={picture.src}
-              ref={picture.ref}
               onClick={(e)=> expandPicture(e)}
               className="
               w-3 
@@ -126,6 +122,7 @@ const PicturesContainer = () => {
 			<div className='h-1 w-100 bg-slate-300'>
 				<div className='h-1 w-100 bg-slate-900 w-2/6'></div>
 			</div>
+      {modalIsOpen && <Modal onClose={() => setModalIsOpen(false)} picture={picture}/>}
 		</>
 	);
 };

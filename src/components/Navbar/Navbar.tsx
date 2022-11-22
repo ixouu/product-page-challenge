@@ -3,7 +3,7 @@ import MobileBtn from './MobileBtn';
 
 
 const Navbar = () => {
-    const menuTitles = ["Acceuil", "Produits", "Contact"];
+    const menuTitles : string[] = ["Acceuil", "Produits", "Contact"];
     const [ windowDimension, setWindowDimension ] = useState<number>(0);
 
     useEffect(() => {

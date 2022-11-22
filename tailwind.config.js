@@ -3,7 +3,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation : {
+      'mobileNav' : 'slide .4s ease-out forwards' 
+      }
+    },
     fontFamily :{
       'inter' : ['"inter"', 'sans-serif'],
       'cinzel': [' "Cinzel Decorative"', 'cursive']

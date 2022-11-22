@@ -1,15 +1,18 @@
-import React from 'react'
 import PicturesContainer from '../../PicturesContainer/PicturesContainer'
+import InfosContainer from '../InfosContainer/InfosContainer'
 
 const Main = () => {
   return (
     <main className='
     flex
-    flex-column
+    flex-col
     min-h-screen
     overflow-x-scroll
+
+    md:flex-row
     '>
         <PicturesContainer/>
+        <InfosContainer/>
     </main>
   )
 }

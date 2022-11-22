@@ -3,6 +3,28 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter:wght@200;400;700&display=swap');
 
+@base{
+  ::-webkit-scrollbar {
+    display: none;
+
+  }
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+@component{
+  .slider::-webkit-scrollbar{
+    display: none;
+  }
+  .slider{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
   @keyframes slide {
     0%{
       -webkit-transform: translate3d(0, -100%, 0) translateX(-50%);

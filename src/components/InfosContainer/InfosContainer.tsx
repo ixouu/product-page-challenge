@@ -122,7 +122,7 @@ const InfosContainer = () => {
 			</div>
 			{/* Form */}
 			<Form />
-			<section className="m-20 min-h-40">
+			<section className="mt-10 min-h-40">
 				<>
 					{ProductDetails.map((product, index) => {
 						return (
@@ -130,6 +130,8 @@ const InfosContainer = () => {
 								key={index}
 								title={product.title}
 								content={product.content}
+								icons={"chevrons"}
+								color={"black"}
 							/>
 						);
 					})}

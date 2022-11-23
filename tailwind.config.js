@@ -10,15 +10,15 @@ module.exports = {
       },
       keyframes :{
         slide: {
-          '0%': {transform : 'translate3d(0, -100%, 0) translateX(-50%)', opacity : '0'},
+          '0%': {transform : 'translate3d(0, -100%, 0) translateX(-50%)'},
           '90%': {opacity : '0.4'},
-          '100%'  : {transform : 'translate3d(0, 0, 0) translateX(-50%)', opacity : '1'}
+          '100%': {transform : 'translate3d(0, 0, 0) translateX(-50%)', opacity : '1'}
         },
-        displayDropdown : {
+        displayDropdown: {
           '0%': {transform : 'scaleY(0)', opacity : '0'},
-          '50%' : {opacity : '1'},
-          '80%' : {transform : 'scaleY(1.1)'},
-          '100%' : {transform : 'scaleY(1)', opacity : '1'}
+          '50%': {opacity : '1'},
+          '80%': {transform : 'scaleY(0)'},
+          '100%' : {transform : 'translate3d(0, 0, 0) translateX(-50%)', opacity : '1'}
         }
       }
     },

@@ -22,7 +22,6 @@ const Navbar = () => {
 
   // toggle navbar depending of screen size
   let isSmallScreen = () => {
-    console.log(windowDimension)
     if (windowDimension <= 768){
         return true
     }else {
@@ -37,9 +36,9 @@ const Navbar = () => {
         ? (<MobileBtn />)
         : (<nav className='w-1/3 uppercase font-semibold lg:w-1/4 xl:w-1/5'>
             <ul className='flex justify-between'>
-            {menuTitles.map((title) => {
+            {menuTitles.map((title, index) => {
 					return (
-						<li> 
+						<li key={index}> 
                         <button className='
                         text-center 
                         uppercase  

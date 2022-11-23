@@ -75,18 +75,16 @@ const PicturesContainer = () => {
 			>
 				{pictures.map((picture, index) => {
 					return (
-            <div className="relative">
+            <div key={index} className="relative">
 						<img
-							key={index}
-							
 							src={picture.src}
 							alt={picture.alt}
 							draggable='false'
 							className='
                 h-auto 
                 max-h-[550px]
-                max-w-[430px] 
-                
+                max-w-[430px]
+
                 lg:max-h-[425px]
 
                 xl:h-fit

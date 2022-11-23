@@ -6,9 +6,26 @@ const Form = () => {
 	const qty:number[] = [1,2,3,4,5,6,7,8,9,10]
 
   return (
-    <form className="mt-4 px-10">
+    <form className="
+	mt-4 
+	px-10 
+	flex 
+	w-full 
+	flex-col
+
+	items-center
+	">
 		{/* Qty select */}
-		<select className="border rounded max-w-[80px] min-h-14 text-lg px-3 py-3">
+		<select className="
+		border 
+		rounded 
+		max-w-[80px] 
+		min-h-14 
+		text-lg 
+		px-3 py-3 
+		
+		md:max-w-[400px]
+		">
         <Options options={qty} />
 		</select>
 		{/* Buttons */}
@@ -28,7 +45,7 @@ const Form = () => {
 		/>
 		<Button 
 		title={"ACHETER MAINTENANT"} 
-		color={"#000000"} 
+		color={"linear-gradient(to bottom, #000428, #004e92)"} 
 		disabled={false} 
 		width={"100%"} 
 		height={"55px"} 
@@ -38,7 +55,7 @@ const Form = () => {
 		link={undefined}
 		border={"2px solid black"}
 		borderRadius={"4px"}
-		customClass={"after:content-[''] after:absolute after:w-full after:h-full after:rounded after:left-[5px] after:top-1.5   after:border-2 after:border-black"}
+		customClass={"border-black border-2 hover:shadow-xl"}
 		/>
 	  </form>
   )

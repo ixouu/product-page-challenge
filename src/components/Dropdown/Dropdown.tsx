@@ -7,13 +7,12 @@ import { faMinus } from "@fortawesome/free-solid-svg-icons";
 
 interface DropdownProps {
 	title: string;
-	content: string;
-	key: number;
+	content: string | { contentTitle: string; description: string }[];
 	color?: string;
 	icons: string;
 }
 
-const Dropdown = ({ title, content, key, color, icons }: DropdownProps) => {
+const Dropdown = ({ title, content, color, icons }: DropdownProps) => {
 	// State who's defining if the dropdown is down or not
 	const [isDown, setIsDown] = useState<boolean>(false);
 
@@ -24,11 +23,10 @@ const Dropdown = ({ title, content, key, color, icons }: DropdownProps) => {
 
 	return (
 		<div
-			className='px-5 w-full'
-			key={key}
+			className='px-5 w-1/2 min-w-[300px]'
 			style={{ color: color && `${color}` }}
 		>
-			<div className='drop-head flex h-10 border-b border-b-slate-400 justify-between items-center'>
+			<div className='drop-head flex h-10 border-b border-b-slate-400 justify-between items-center max-w-md'>
 				<h4 className='pl-1 text-lg'>{title}</h4>
 				<button
 					type='button'
@@ -48,10 +46,30 @@ const Dropdown = ({ title, content, key, color, icons }: DropdownProps) => {
 			{isDown && (
 				<div
 					className={
-						isDown ? "dropDownActive origin-top-center " : ""
+						isDown ? "animate-dropDownActive origin-top-center" : ""
 					}
 				>
-					<p>{content}</p>
+					{typeof content === "string" ? (
+						<span className='max-w-md'>{content}</span>
+					) : (
+						content.map((opt, index) => {
+							return (
+								<ul
+									key={index}
+									className='flex flex-col wmax-full'
+								>
+									<li>
+										<span className='font-bold'>
+											{opt.contentTitle}: 
+										</span>
+										<span className='max-w-md pl-[4px]'>
+											{opt.description}
+										</span>
+									</li>
+								</ul>
+							);
+						})
+					)}
 				</div>
 			)}
 		</div>

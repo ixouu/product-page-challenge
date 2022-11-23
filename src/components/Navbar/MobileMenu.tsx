@@ -4,11 +4,11 @@ const MobileMenu = () => {
 	const menuTitles = ["Acceuil", "Produits", "Contact"];
 
 	return (
-		<nav className='animate-mobileNav absolute top-[90px] w-4/5 left-1/2 -translate-x-1/2 opacity-0'>
+		<nav className='animate-mobileNav absolute top-[90px] w-4/5 left-1/2 -translate-x-1/2 z-100' >
 			<ul className='flex justify-between'>
-				{menuTitles.map((title) => {
+				{menuTitles.map((title, index) => {
 					return (
-						<li> <button className='
+						<li key={index}> <button className='
                         mobileBtn
                         w-full 
                         text-center 
@@ -20,7 +20,6 @@ const MobileMenu = () => {
                         uppercase  
                         relative 
                         border-2
-                        z-0
                         '>
                         {title}</button>
 						</li>

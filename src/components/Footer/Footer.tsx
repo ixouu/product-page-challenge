@@ -21,12 +21,24 @@ const reassuranceData : { title: string; content: string }[] = [
 
 const Footer = () => {
   return (
-    <footer className='bg-black text-white p-2'>
+    <footer className='
+    bg-black 
+    text-white 
+    p-3
+    
+    md:grid
+    md:grid-cols-3
+    md:justify-items-center
+    md:py-6
+
+    lg:py-8
+    '>
       <div className='flex flex-col pt-4'>
         <Title position='relative' color="white" fontSize='1rem'/>
         <h6 className=' italic text-sm font-light'>Combinez style et confort au quotidien</h6>
       </div>
-      <section className="p-2 min-h-40">
+      <section className="pt-2 min-h-40
+       md:w-full">
 				<>
 					{reassuranceData.map((service, index) => {
 						return (

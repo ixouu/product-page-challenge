@@ -8,7 +8,7 @@ const Main = () => {
     flex-col
     min-h-screen
     overflow-x-scroll
-
+    z-90
     md:flex-row
     '>
         <PicturesContainer/>

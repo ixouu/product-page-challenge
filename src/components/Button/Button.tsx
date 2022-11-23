@@ -46,12 +46,14 @@ const Button = ({
 					opacity:"1",
 					margin:".5rem 0",
 					position: "relative",
-					backgroundColor: `${color}`,
+					background: `${color}`,
 					width: `${width}`,
 					height: `${height}`,
 					color: `${fontColor}`,
 					border: `${border}`,
 					borderRadius: `${borderRadius}`,
+					maxWidth : '400px',
+					boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px'
 				}}>
 				{title}
 				{addIcon()}

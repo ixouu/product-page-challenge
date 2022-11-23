@@ -48,7 +48,7 @@ const Dropdown = ({ title, content, key, color, icons }: DropdownProps) => {
 			{isDown && (
 				<div
 					className={
-						isDown ? "dropdown-active origin-top-center " : ""
+						isDown ? "dropDownActive origin-top-center " : ""
 					}
 				>
 					<p>{content}</p>

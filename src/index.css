@@ -16,19 +16,16 @@
 }
 
 @component{
-  .slider::-webkit-scrollbar{
+  /* .slider::-webkit-scrollbar{
     display: none;
   }
   .slider{
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }
-  .dropdown-active{
-    animation: displayDropdown .3s linear 1 forwards;
-}
+  } */
 }
 
-  @keyframes slide {
+  /* @keyframes slide {
     0%{
       -webkit-transform: translate3d(0, -100%, 0) translateX(-50%);
       transform: translate3d(0, -100%, 0) translateX(-50%);
@@ -63,4 +60,4 @@
         opacity: 1;
     }
     
-}
+} */

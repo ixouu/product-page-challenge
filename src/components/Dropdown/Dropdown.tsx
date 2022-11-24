@@ -23,11 +23,11 @@ const Dropdown = ({ title, content, color, icons }: DropdownProps) => {
 
 	return (
 		<div
-			className='px-5 w-1/2 min-w-[300px]'
+			className='px-10 min-w-[300px] w-full flex  flex-col  items-center '
 			style={{ color: color && `${color}` }}
 		>
-			<div className='drop-head flex h-10 border-b border-b-slate-400 justify-between items-center max-w-md'>
-				<h4 className='pl-1 text-lg'>{title}</h4>
+			<div className='drop-head flex h-10 border-b border-b-slate-400 justify-between items-center w-full max-w-md'>
+				<h4 className='pl-1 text-lg xl:text-xl'>{title}</h4>
 				<button
 					type='button'
 					onClick={() => handleClick()}
@@ -50,13 +50,13 @@ const Dropdown = ({ title, content, color, icons }: DropdownProps) => {
 					}
 				>
 					{typeof content === "string" ? (
-						<span className='max-w-md'>{content}</span>
+						<span className='max-w-md inline-block'>{content}</span>
 					) : (
 						content.map((opt, index) => {
 							return (
 								<ul
 									key={index}
-									className='flex flex-col wmax-full'
+									className='flex flex-col max-w-md'
 								>
 									<li>
 										<span className='font-bold'>

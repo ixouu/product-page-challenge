@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icons";
-import Modal from '../components/Modal/Modal'
+import Modal from "../components/Modal/Modal";
 
 import productImg1 from "../assets/images/img1.webp";
 import productImg2 from "../assets/images/img2.webp";
@@ -11,13 +11,12 @@ import productImg5 from "../assets/images/img5.webp";
 import productImg6 from "../assets/images/img6.webp";
 
 const PicturesContainer = () => {
+	const containerRef = useRef<HTMLDivElement>(null);
+	// state to define if the modal has to be display
+	const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
-
-  // state to define if the modal has to be display
-  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
-
-  // state to define the picture to pass through modal's props
-  const [picture, setPicture] = useState("");
+	// state to define the picture to pass through modal's props
+	const [picture, setPicture] = useState("");
 
 	const pictures = [
 		{
@@ -46,11 +45,31 @@ const PicturesContainer = () => {
 		},
 	];
 
-  // function who's firing modal to display the picture in full size on click event
-  const expandPicture = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    setPicture(e.currentTarget.value);
-    !modalIsOpen? setModalIsOpen(true) : setModalIsOpen(false);
-  }
+	// function who's firing modal to display the picture in full size on click event
+	const expandPicture = (
+		e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+	) => {
+		setPicture(e.currentTarget.value);
+		!modalIsOpen ? setModalIsOpen(true) : setModalIsOpen(false);
+	};
+
+	const [scrollBarWidth, setScrollBarWidth] = useState(0);
+
+	// calculate the width% of the scrollbar based on client's scrolling action
+	const handleScroll = () => {
+		const position = containerRef.current!.scrollLeft;
+		const maxWidth = containerRef.current!.scrollWidth;
+		const calcWidth = Math.round((position * 100) / maxWidth + 18);
+		setScrollBarWidth(calcWidth);
+	};
+
+	useEffect(() => {
+		const elementToListen = containerRef.current!;
+		elementToListen.addEventListener("scroll", handleScroll);
+		return () => {
+			elementToListen.removeEventListener("scroll", handleScroll);
+		};
+	}, [containerRef]);
 
 	return (
 		<>
@@ -72,15 +91,19 @@ const PicturesContainer = () => {
          xl:gap-x-2
          xl:w-[60%]
          '
+				ref={containerRef}
 			>
 				{pictures.map((picture, index) => {
 					return (
-            <div key={index} className="relative">
-						<img
-							src={picture.src}
-							alt={picture.alt}
-							draggable='false'
-							className='
+						<div
+							key={index}
+							className='relative'
+						>
+							<img
+								src={picture.src}
+								alt={picture.alt}
+								draggable='false'
+								className='
                 h-auto 
                 max-h-[550px]
                 max-w-[430px]
@@ -91,11 +114,11 @@ const PicturesContainer = () => {
                 xl:max-h-full
                 xl:max-w-full
                 '
-						/>
-              <button
-              value={picture.src}
-              onClick={(e)=> expandPicture(e)}
-              className="
+							/>
+							<button
+								value={picture.src}
+								onClick={(e) => expandPicture(e)}
+								className='
               w-3 
               h-3 
               flex 
@@ -110,17 +133,28 @@ const PicturesContainer = () => {
               cursor-pointer
               rounded-lg
               hover:opacity-100
-              ">
-                <FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} />
-              </button>
-            </div>
+              '
+							>
+								<FontAwesomeIcon
+									icon={faUpRightAndDownLeftFromCenter}
+								/>
+							</button>
+						</div>
 					);
 				})}
 			</div>
 			<div className='h-1 w-100 bg-slate-300'>
-				<div className='h-1 w-100 bg-slate-900 w-2/6'></div>
+				<div
+					className='h-1 w-auto bg-slate-900'
+					style={{ width: `${scrollBarWidth}%` }}
+				></div>
 			</div>
-      {modalIsOpen && <Modal onClose={() => setModalIsOpen(false)} picture={picture}/>}
+			{modalIsOpen && (
+				<Modal
+					onClose={() => setModalIsOpen(false)}
+					picture={picture}
+				/>
+			)}
 		</>
 	);
 };

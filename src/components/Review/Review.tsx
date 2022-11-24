@@ -1,4 +1,4 @@
-import reviews from '../../data/reviews'
+import {reviews} from '../../data/data'
 
 const Reviews = () => {
 
@@ -22,19 +22,19 @@ const Reviews = () => {
                 case 0: 
                     return 
                 case 1:
-                    reviewsBackgroundLength[0][1] += Math.round(100/totalNumOfReviews)/2
+                    reviewsBackgroundLength[0][1] += Math.round(100/totalNumOfReviews)
                     break;
                 case 2:
-                    reviewsBackgroundLength[1][1] += Math.round(100/totalNumOfReviews)/2
+                    reviewsBackgroundLength[1][1] += Math.round(100/totalNumOfReviews)
                     break;
                 case 3:
-                    reviewsBackgroundLength[2][1] += Math.round(100/totalNumOfReviews)/2
+                    reviewsBackgroundLength[2][1] += Math.round(100/totalNumOfReviews)
                     break;
                 case 4:
-                    reviewsBackgroundLength[3][1] += Math.round(100/totalNumOfReviews)/2
+                    reviewsBackgroundLength[3][1] += Math.round(100/totalNumOfReviews)
                     break;
                 case 5:
-                    reviewsBackgroundLength[4][1] += Math.round(100/totalNumOfReviews)/2
+                    reviewsBackgroundLength[4][1] += Math.round(100/totalNumOfReviews)
                     break;
                 default:
                     break;
@@ -45,7 +45,8 @@ const Reviews = () => {
 
   return (
     <section className='mt-4 lg:mt-8 lg:px-6 xl:px-16 2xl:px-32' >
-        <h4 className='font-semibold text-xl'>Avis</h4>
+        <h4 className='font-semibold text-xl'>Avis ({reviews.length})</h4>
+
         <span className='text-2xl font-bold'>{average()} / 5</span>
         <ul className='flex flex-col-reverse w-full'>
             {reviewsBackgroundLength.map((note, index) =>{

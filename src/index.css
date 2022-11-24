@@ -30,6 +30,20 @@
 .heart2{animation: heartLeaving2  1s .1s linear forwards;}
 .heart3{animation: heartLeaving2  1s .2s linear forwards;}
 
+
+
+input[type="radio"].input-colorChoice + label {
+  padding: 0.3rem 0.5rem;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  display: inline-block;
+}
+input[type="radio"].input-colorChoice:checked + label {
+  border: 2px solid #000;
+}
+
 @keyframes slide {
   0%{
     -webkit-transform: translate3d(0, -100%, 0) translateX(-50%);

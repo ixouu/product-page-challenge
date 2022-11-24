@@ -133,15 +133,7 @@ const InfosContainer = () => {
 				md:mt-8
 
 				lg:mt-12
-				'></div>
-				{/* Colors options */}
-				<div className='flex justify-between  items-center mt-4'>
-					<span className='inline-block'>Coloris</span>
-					<div className='flex flex-row w-1/4 justify-evenly'>
-						<div className='w-[25px] h-[25px] border-solid bg-stone-400 border-2 rounded-full'></div>
-						<div className='w-[25px] h-[25px] border-solid bg-amber-100 border-2 rounded-full'></div>
-						<div className='w-[25px] h-[25px] border-solid bg-orange-900 border-2 rounded-full'></div>
-					</div>
+				'>
 				</div>
 				{/* Form */}
 				<Form />

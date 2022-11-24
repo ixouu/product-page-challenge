@@ -59,7 +59,7 @@ const dividePrice = () => {
             md:leading-9
             '>{optionSelected}x {dividePrice()} € sans frais.</span>
         </div>
-        <span className='text-xs'>Payez en plusieurs fois !</span>
+        <span className='text-xs md:text-sm'>Payez en plusieurs fois !</span>
     </div>
   )
 }

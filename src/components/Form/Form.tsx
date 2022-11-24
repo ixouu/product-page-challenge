@@ -1,5 +1,9 @@
 import Button from "../Button/Button";
 import Options from './Options'
+import { colors } from "../../data/data";
+import Radios from "./Radios";
+
+
 const Form = () => {
 
 	// Qty options 
@@ -15,6 +19,13 @@ const Form = () => {
 
 	items-center
 	">
+		{/* Colors */}
+		<div className="flex justify-between  items-center mt-4">
+		<p>Coloris</p>
+		{colors.map((color, index) => {
+			return <Radios key={index}  colorTitle={color.colorTitle} colorCode={color.colorCode}/>
+		})}
+		</div>
 		{/* Qty select */}
 		<select className="
 		border 

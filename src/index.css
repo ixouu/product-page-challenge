@@ -30,7 +30,9 @@
 .heart2{animation: heartLeaving2  1s .1s linear forwards;}
 .heart3{animation: heartLeaving2  1s .2s linear forwards;}
 
-
+body{
+  font-family: 'inter', sans-serif;
+}
 
 input[type="radio"].input-colorChoice + label {
   padding: 0.3rem 0.5rem;

@@ -20,11 +20,13 @@ const Form = () => {
 	items-center
 	">
 		{/* Colors */}
-		<div className="flex justify-between  items-center mt-4">
-		<p>Coloris</p>
-		{colors.map((color, index) => {
-			return <Radios key={index}  colorTitle={color.colorTitle} colorCode={color.colorCode}/>
-		})}
+		<div className="flex justify-between  items-center my-4 w-full">
+		<p className="text-ml">Choisissez la couleur :</p>
+			<div className="flex items-center">
+				{colors.map((color, index) => {
+					return <Radios key={index}  colorTitle={color.colorTitle} colorCode={color.colorCode} defaultValue={color.defaultValue}/>
+				})}
+			</div>
 		</div>
 		{/* Qty select */}
 		<select className="

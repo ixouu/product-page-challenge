@@ -1,4 +1,3 @@
-import React from 'react'
 import productImg7 from "../../assets/images/img7.webp";
 import productImg8 from "../../assets/images/img8.webp";
 import productImg9 from "../../assets/images/img9.webp";

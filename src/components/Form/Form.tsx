@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, createRef, useEffect } from "react";
 import Button from "../Button/Button";
 import Options from './Options'
 import { colors } from "../../data/data";
@@ -9,12 +9,24 @@ import { CartContextType } from "../../@types/cart";
 
 const Form = () => {
 
-	const selectRef = useRef<HTMLSelectElement>(null)
+	const selectRef = useRef<HTMLSelectElement>(null);
+	const BtnRef = createRef<HTMLButtonElement>();
+
+	// remove bounce class when the button has been clicked
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			BtnRef.current?.classList.remove("bounce")
+		}, 2000);
+	  
+		return () => clearTimeout(timeout);
+	  }, [BtnRef]);
+	  
 
 	const {UpdateCart} = useCartContext() as CartContextType;
 
 	// handle Click Button
 	// Update product in cart state with the selected quantity
+	// add bounce class to the button
 	const handleClick = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		e.preventDefault();
 		switch (e.currentTarget.type) {
@@ -22,7 +34,8 @@ const Form = () => {
 				console.log('ok')
 				return
 			case 'button':
-				UpdateCart(Number(selectRef.current!.value))
+				UpdateCart(Number(selectRef.current!.value));
+				BtnRef.current?.classList.add("bounce")
 				break;
 			default:
 				break;
@@ -104,6 +117,7 @@ const Form = () => {
 		</div>
 		{/* Buttons */}
 		<Button 
+		BtnRef={BtnRef}
 		title={"AJOUTER AU PANIER"} 
 		color={"#FFFFFF"} 
 		disabled={false} 
@@ -118,7 +132,8 @@ const Form = () => {
 		customClass={"border-black border-2 shadow-btnShadow hover:shadow-xl"}
 		handleClick={handleClick}
 		/>
-		<Button 
+		<Button
+		BtnRef={undefined}
 		title={"ACHETER MAINTENANT"} 
 		color={"linear-gradient(to bottom, #000428, #004e92)"} 
 		disabled={false} 

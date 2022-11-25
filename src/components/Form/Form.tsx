@@ -1,13 +1,33 @@
+import { useRef } from "react";
 import Button from "../Button/Button";
 import Options from './Options'
 import { colors } from "../../data/data";
 import Radios from "./Radios";
-
+import { ProductQty } from "../../data/data";
+import { useCartContext }  from '../../context/CartContext';
+import { CartContextType } from "../../@types/cart";
 
 const Form = () => {
 
-	// Qty options 
-	const qty:number[] = [1,2,3,4,5,6,7,8,9,10]
+	const selectRef = useRef<HTMLSelectElement>(null)
+
+	const {UpdateCart} = useCartContext() as CartContextType;
+
+	// handle Click Button
+	// Update product in cart state with the selected quantity
+	const handleClick = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+		e.preventDefault();
+		switch (e.currentTarget.type) {
+			case 'submit':
+				console.log('ok')
+				return
+			case 'button':
+				UpdateCart(Number(selectRef.current!.value))
+				break;
+			default:
+				break;
+		}
+	}
 
   return (
     <form className="
@@ -18,7 +38,8 @@ const Form = () => {
 	flex-col
 
 	items-center
-	">
+	"
+	>
 		{/* Colors */}
 		<div className="
 		flex 
@@ -33,7 +54,7 @@ const Form = () => {
 		lg:flex-row
 		lg:max-w-none
 		">
-		<p className="text-ml">Choisissez la couleur :</p>
+		<p className="text-ml xl:text-xl">Choisissez la couleur :</p>
 			<div className="flex items-center ">
 				{colors.map((color, index) => {
 					return <Radios key={index}  colorTitle={color.colorTitle} colorCode={color.colorCode} defaultValue={color.defaultValue}/>
@@ -54,7 +75,7 @@ const Form = () => {
 		lg:flex-row
 		lg:max-w-none
 		">
-		<p className="text-ml">Sélectionnez une quantité:</p>
+		<p className="text-ml xl:text-xl">Sélectionnez une quantité:</p>
 		<select className="
 		border-2
 		border-black
@@ -75,8 +96,10 @@ const Form = () => {
 
 		lg:w-[400px]
 		lg:ml-3
-		">
-        <Options options={qty} />
+		"
+		ref={selectRef}
+		>
+        <Options options={ProductQty} />
 		</select>
 		</div>
 		{/* Buttons */}
@@ -88,11 +111,12 @@ const Form = () => {
 		height={"55px"} 
 		icon={undefined} 
 		fontColor={"#000000"}
-		type={"submit"}
+		type={"button"}
 		link={undefined}
 		border={undefined}
 		borderRadius={"4px"}
 		customClass={"border-black border-2 shadow-btnShadow hover:shadow-xl"}
+		handleClick={handleClick}
 		/>
 		<Button 
 		title={"ACHETER MAINTENANT"} 
@@ -107,6 +131,7 @@ const Form = () => {
 		border={"2px solid black"}
 		borderRadius={"4px"}
 		customClass={"border-black border-2  shadow-btnShadow hover:shadow-xl"}
+		handleClick={handleClick}
 		/>
 	  </form>
   )

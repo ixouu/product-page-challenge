@@ -1,15 +1,18 @@
-import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
+import { CartContext } from "./context/CartContext";
 
 function App() {
-  return (
-      <>
-        <Header/>
-        <Main/>
-        <Footer/>
-      </>
-  );
+	return (
+		<>
+			<CartContext>
+				<Header />
+				<Main />
+				<Footer />
+			</CartContext>
+		</>
+	);
 }
 
 export default App;

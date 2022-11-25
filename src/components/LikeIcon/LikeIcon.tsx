@@ -16,9 +16,9 @@ const LikeIcon = () => {
   return (
     <>
       <div className="relative w-[30px] h-[30px] text-purple-900">
-        {!isLiked ? <button onClick={(e)=> handleClick(e)}><FontAwesomeIcon icon={faHeart} className=" text-2xl"/></button> :(
+        {!isLiked ? <button onClick={(e)=> handleClick(e)}><FontAwesomeIcon icon={faHeart} className=" text-2xl ease-out duration-200 hover:scale-125"/></button> :(
           <>
-                  <button onClick={(e)=> handleClick(e)}><FontAwesomeIcon icon={faHeart2} className="faHeart text-2xl"/></button>
+                  <button onClick={(e)=> handleClick(e)}><FontAwesomeIcon icon={faHeart2} className="faHeart text-2xl ease-out duration-200 hover:scale-125"/></button>
                   <FontAwesomeIcon icon={faHeart2} className="faHeart absolute opacity-50 -left-2 top-2 -rotate-12 heart2"/>
                   <FontAwesomeIcon icon={faHeart2} className="faHeart absolute opacity-50 right-2 top-2 rotate-12 heart3"/>
                   <FontAwesomeIcon icon={faHeart2} className="faHeart absolute opacity-50 top-2 -rotate-180 heart1"/>

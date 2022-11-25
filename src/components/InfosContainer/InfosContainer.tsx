@@ -1,4 +1,3 @@
-import React from "react";
 import LikeIcon from "../LikeIcon/LikeIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
@@ -7,30 +6,14 @@ import Dropdown from "../Dropdown/Dropdown";
 import PaiementOptions from "../PaiementOptions/PaiementOptions";
 import Reviews from "../Review/Review";
 import SuggestedProducts from "../SuggestedProducts/SuggestedProducts";
-
-
-// Product details data
-const ProductDetails: { title: string; content: string | {contentTitle: string, description: string }[] }[] = [
-	{
-		title: "Description",
-		content:
-			" Lorem ipsum dolor, sit amet consectetur adipisicing elit. At molestiae ea obcaecati fuga nihil, nulla voluptates. Fuga nam magnam dolor! Nisi itaque voluptates maxime id.",
-	},
-	{
-		title: "Livraison",
-		content:
-			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nobis ea id ad numquam nostrum vel, qui omnis ab nihil ex dolore aspernatur? Enim, ipsam!",
-	},
-	{
-		title: "Matériaux",
-		content: [{contentTitle : "Composition", description:"100% coton"}, {contentTitle: "Doublure", description: "100% polyester"}, {contentTitle:'Épaisseur de la doublure', description: " Non doublé"}, {contentTitle: "Conseils d'entretien", description: "Ne pas mettre au sèche-linge, nettoyage chimique possible, ne pas laver"}]
-	},
-];
+import LineBreaker from "./LineBreaker";
+import { ProductDetails } from "../../data/data";
 
 const InfosContainer = () => {
 	return (
 		<>
-			<div className='mt-5 
+			<div
+				className='mt-5 
 			px-3 
 			w-full 
 			
@@ -43,17 +26,21 @@ const InfosContainer = () => {
 			lg:w-[40%]
 			lg:pt-6
 			lg:px-10
-			'>
+			'
+			>
 				{/* Index Page */}
-				<span className='
+				<span
+					className='
 				text-xs 
 				
-				md:text-sm'>
+				md:text-sm'
+				>
 					Acceuil / Blousons / Blouson Umani
 				</span>
 				<div className='flex items-center justify-between'>
 					{/* Product title */}
-					<h2 className='
+					<h2
+						className='
 					text-xl 
 					font-semibold 
 					mt-2
@@ -63,14 +50,16 @@ const InfosContainer = () => {
 					
 					lg:text-3xl
 					lg:mt-6
-					'>
+					'
+					>
 						Blouson Umani
 					</h2>
 					{/* Like Icon */}
 					<LikeIcon />
 				</div>
 				{/* Small line breaker */}
-				<div className='
+				<div
+					className='
 				w-16 
 				h-[1px] 
 				bg-black 
@@ -81,9 +70,11 @@ const InfosContainer = () => {
 
 				lg:w-[300px]
 				lg:mt-6
-				'></div>
+				'
+				></div>
 				{/* Price */}
-				<div className='
+				<div
+					className='
 				flex 
 				items-center 
 				mt-2
@@ -93,12 +84,16 @@ const InfosContainer = () => {
 				md:items-start 
 				
 				lg:mt-6
-				'>
-					<p className='text-3xl py-6'>
-						149<span>,00</span>€
-					</p>
+				'
+				>
+					<div className="flex justify-center items-start text-stone-600">
+						<span className='text-3xl py-6 lg:text-4xl'>149</span>
+						<span className="mt-1 text-sm self-start pr-2 py-6 lg:text-base">,00</span>
+						<span className='text-3xl py-6 lg:text-4xl'>€</span>
+					</div>
+
 					{/* Paiement options */}
-					<PaiementOptions/>
+					<PaiementOptions />
 				</div>
 				{/* Product ranking */}
 				<div className='my-4'>
@@ -124,21 +119,11 @@ const InfosContainer = () => {
 					/>
 					<span className='italic'>18 avis</span>
 				</div>
-				{/* Large line breaker */}
-				<div className='
-				w-full 
-				h-[1px] 
-				bg-slate-200 
-				mt-4
-				
-				md:mt-8
-
-				lg:mt-12
-				'>
-				</div>
+				<LineBreaker/>
 				{/* Form */}
 				<Form />
-				<section className="mt-10 min-h-40 px-2 self-auto flex flex-col items-center justify-center">
+				<LineBreaker/>
+				<section className='mt-10 min-h-40 px-2 self-auto flex flex-col items-center justify-start'>
 					<>
 						{ProductDetails.map((product) => {
 							return (
@@ -153,8 +138,8 @@ const InfosContainer = () => {
 					</>
 				</section>
 				{/* Reviews */}
-				<Reviews/>
-				<SuggestedProducts/>
+				<Reviews />
+				<SuggestedProducts />
 			</div>
 		</>
 	);

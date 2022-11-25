@@ -1,5 +1,3 @@
-import React from "react";
-
 const MobileMenu = () => {
 	const menuTitles = ["Acceuil", "Produits", "Contact"];
 

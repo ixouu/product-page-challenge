@@ -13,6 +13,7 @@ interface ButtonProps {
 	border: string | undefined;
 	borderRadius: string | undefined;
 	customClass: string | undefined;
+	handleClick : (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => void | undefined;
 }
 
 const Button = ({
@@ -26,22 +27,25 @@ const Button = ({
 		type,
 		border,
 		borderRadius,
-		customClass
+		customClass,
+		handleClick,
 	}: ButtonProps) => {
 
-		const addIcon = () => {
-			if (icon !== undefined) {
-				const iconElement = React.createElement("i", {
-					className: `${icon}`,
-				});
-				return iconElement;
-			}
-		};
+	const addIcon = () => {
+		if (icon !== undefined) {
+			const iconElement = React.createElement("i", {
+				className: `${icon}`,
+			});
+			return iconElement;
+		}
+	};
+
 
 		return <button
 				className={customClass && `${customClass} filterz`}
 				disabled={disabled}
 				type={type}
+				onClick={(e) => handleClick(e)}
 				style={{
 					opacity:"1",
 					margin:".5rem 0",

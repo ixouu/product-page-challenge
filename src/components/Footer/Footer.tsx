@@ -25,11 +25,17 @@ const Footer = () => {
     bg-black 
     text-white 
     p-3
+    min-h-[450px]
+    flex
+    flex-col
+    h-full
+    justify-around
     
     md:grid
     md:grid-cols-3
     md:justify-items-center
     md:py-6
+    md:min-h-[300px]
 
     lg:py-8
     '>

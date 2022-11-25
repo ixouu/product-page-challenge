@@ -49,6 +49,8 @@ const Navbar = () => {
                         hover:text-yellow-500
                         duration-200
                         ease-out
+
+                        md:p-2
                         '
                         style={{animationDelay : `${animationDelay[index-1]}ms`}}>
                         {title}</button>

@@ -6,6 +6,7 @@ import Form from "../Form/Form";
 import Dropdown from "../Dropdown/Dropdown";
 import PaiementOptions from "../PaiementOptions/PaiementOptions";
 import Reviews from "../Review/Review";
+import SuggestedProducts from "../SuggestedProducts/SuggestedProducts";
 
 
 // Product details data
@@ -153,6 +154,7 @@ const InfosContainer = () => {
 				</section>
 				{/* Reviews */}
 				<Reviews/>
+				<SuggestedProducts/>
 			</div>
 		</>
 	);

@@ -80,12 +80,14 @@ const PicturesContainer = () => {
          min-h-content
          
          md:grid
+		 md:auto-cols-max
+		 md:h-min
          
          lg:grid
          lg:grid-cols-2 
          lg:gap-2
          lg:w-[55%]
-         lg:auto-cols-max
+         lg:auto-cols-min
 
          xl:grid
          xl:gap-x-2

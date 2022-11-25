@@ -20,27 +20,65 @@ const Form = () => {
 	items-center
 	">
 		{/* Colors */}
-		<div className="flex justify-between  items-center my-4 w-full">
+		<div className="
+		flex 
+		justify-between
+		items-center
+		my-4
+		w-full
+		
+		md:flex-col
+		md:max-w-[300px]
+
+		lg:flex-row
+		lg:max-w-none
+		">
 		<p className="text-ml">Choisissez la couleur :</p>
-			<div className="flex items-center">
+			<div className="flex items-center ">
 				{colors.map((color, index) => {
 					return <Radios key={index}  colorTitle={color.colorTitle} colorCode={color.colorCode} defaultValue={color.defaultValue}/>
 				})}
 			</div>
 		</div>
 		{/* Qty select */}
+		<div className="
+		flex 
+		justify-between 
+		items-center
+		my-4
+		w-full
+		
+		md:flex-col
+		md:max-w-[300px]
+
+		lg:flex-row
+		lg:max-w-none
+		">
+		<p className="text-ml">Sélectionnez une quantité:</p>
 		<select className="
-		border 
+		border-2
+		border-black
 		rounded 
 		max-w-[80px] 
 		min-h-14 
 		text-lg 
-		px-3 py-3 
+		p-3
+		bg-white 
+		shadow-btnShadow
+		hover:shadow-xl
+		ease-in 
+		duration-200
 		
-		md:max-w-[400px]
+		md:w-full
+		md:max-w-[300px]
+		md:text-center
+
+		lg:w-[400px]
+		lg:ml-3
 		">
         <Options options={qty} />
 		</select>
+		</div>
 		{/* Buttons */}
 		<Button 
 		title={"AJOUTER AU PANIER"} 
@@ -54,7 +92,7 @@ const Form = () => {
 		link={undefined}
 		border={undefined}
 		borderRadius={"4px"}
-		customClass={"border-black border-2"}
+		customClass={"border-black border-2 shadow-btnShadow hover:shadow-xl"}
 		/>
 		<Button 
 		title={"ACHETER MAINTENANT"} 
@@ -68,7 +106,7 @@ const Form = () => {
 		link={undefined}
 		border={"2px solid black"}
 		borderRadius={"4px"}
-		customClass={"border-black border-2 hover:shadow-xl"}
+		customClass={"border-black border-2  shadow-btnShadow hover:shadow-xl"}
 		/>
 	  </form>
   )

@@ -1,9 +1,10 @@
 import {useEffect, useState} from 'react';
 import MobileBtn from './MobileBtn';
 
+const menuTitles : string[] = ["Acceuil", "Produits", "Contact"];
+const animationDelay : number[] = [75, 150, 225]
 
 const Navbar = () => {
-    const menuTitles : string[] = ["Acceuil", "Produits", "Contact"];
     const [ windowDimension, setWindowDimension ] = useState<number>(0);
 
     useEffect(() => {
@@ -40,6 +41,7 @@ const Navbar = () => {
 					return (
 						<li key={index}> 
                         <button className='
+                        animate-fade
                         text-center 
                         uppercase  
                         py-3 
@@ -47,7 +49,8 @@ const Navbar = () => {
                         hover:text-yellow-500
                         duration-200
                         ease-out
-                        '>
+                        '
+                        style={{animationDelay : `${animationDelay[index-1]}ms`}}>
                         {title}</button>
 					    </li>
 					);

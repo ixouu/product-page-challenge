@@ -53,8 +53,7 @@ const Button = ({
 					border: `${border}`,
 					borderRadius: `${borderRadius}`,
 					maxWidth : '400px',
-					boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
-					transition: "all .3 ease-out"
+					transition: "all .2s ease-in"
 				}}>
 				{title}
 				{addIcon()}

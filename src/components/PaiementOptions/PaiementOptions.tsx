@@ -39,6 +39,7 @@ const dividePrice = () => {
                             <button 
                             className={opt === optionSelected ? 'bg-gradient-to-b from-zinc-500 to-zinc-400 rounded-full w-8 h-8 mr-0.5 flex items-center justify-center xl:w-9 xl:h-9': 'bg-gradient-to-b from-neutral-900 to-neutral-700 rounded-full w-8 h-8 mr-0.5 xl:w-9 xl:h-9  flex items-center justify-center'}
                             data-option={opt}
+                            aria-label="Sélectionne une méthode de paiement"
                             onClick={(e) => handleClick(e)}
                             >
                                 <span className='text-white text-sm'>

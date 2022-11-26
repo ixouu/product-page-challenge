@@ -1,7 +1,5 @@
-import {lazy} from 'react';
-
 import InfosContainer from '../InfosContainer/InfosContainer'
-const PicturesContainer = lazy (() => import('../../PicturesContainer/PicturesContainer'))
+import PicturesContainer from '../PicturesContainer/PicturesContainer';
 
 const Main = () => {
   return (

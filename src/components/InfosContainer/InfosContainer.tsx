@@ -142,6 +142,7 @@ const InfosContainer = () => {
 				</section>
 				{/* Reviews */}
 				<Reviews />
+				{/* SuggestedProduct */}
 				<SuggestedProducts />
 			</div>
 		</>

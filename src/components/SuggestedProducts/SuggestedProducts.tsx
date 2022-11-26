@@ -27,11 +27,12 @@ const SuggestedProducts = () => {
         {pictures.map((picture, index) => {
           return <img key={index} src={picture.src} alt={picture.alt} className="
           w-[300px] 
-          h-auto 
+          h-[400px]
           mx-2 
           rounded 
           cursor-pointer
           lg:w-[375px]
+          lg:h-auto
           xl:w-[450px]
           "/>
         })}

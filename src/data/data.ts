@@ -35,8 +35,17 @@ const ProductDetails: {
 	},
 ];
 
-// Qty options 
+// Product quantities
 const ProductQty:number[] = [1,2,3,4,5,6,7,8,9,10];
+
+// Product sizes
+const ProductSizes: {size:string, available:boolean}[] =[
+	{size: 'XS', available : false},
+	{size: 'S', available : true},
+	{size: 'M', available : true},
+	{size: 'L', available : true},
+	{size: 'XL', available : false},
+];
 
 // Reassurance Data
 const reassuranceData : { title: string; content: string }[] = [
@@ -54,4 +63,4 @@ const reassuranceData : { title: string; content: string }[] = [
 	},
   ]
 
-export {reviews, colors, ProductDetails, ProductQty, reassuranceData};
+export {reviews, colors, ProductDetails, ProductQty, ProductSizes, reassuranceData};

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Snipper = () => {
+const Spinner = () => {
 	return (
         <>
         <div className="
@@ -55,4 +55,4 @@ const Snipper = () => {
 	);
 };
 
-export default Snipper;
+export default Spinner;

@@ -14,7 +14,7 @@ const MobileBtn: React.FC = () => {
 
   return (
     <>
-    <button className='bg-transparent h-10' onClick={(e) => handleClick(e)}>
+    <button aria-label='Ouvre le menu' className='bg-transparent h-10' onClick={(e) => handleClick(e)}>
         <div className="w-5 bg-black h-0.5 mb-1"></div>
         <div className="w-3 bg-black h-0.5"></div>
     </button>

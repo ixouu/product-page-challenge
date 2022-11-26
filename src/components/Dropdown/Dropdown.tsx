@@ -31,6 +31,7 @@ const Dropdown = ({ title, content, color, icons }: DropdownProps) => {
 				<button
 					type='button'
 					onClick={() => handleClick()}
+					aria-label="Ouvre le menu"
 				>
 					{isDown ? (
 						<FontAwesomeIcon

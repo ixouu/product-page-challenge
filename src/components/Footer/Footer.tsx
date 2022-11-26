@@ -27,7 +27,7 @@ const Footer = () => {
     '
 		>
 			<div className='flex flex-col pt-4'>
-				<h6
+				<h5
 					className='
         font-cinzel 
         text-2xl
@@ -41,7 +41,7 @@ const Footer = () => {
         '
 				>
 					YOUVERSACE
-				</h6>
+				</h5>
 				<span className=' italic font-light'>
 					Combinez style et confort au quotidien
 				</span>

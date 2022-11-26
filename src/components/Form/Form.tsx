@@ -3,9 +3,10 @@ import Button from "../Button/Button";
 import Options from './Options'
 import { colors } from "../../data/data";
 import Radios from "./Radios";
-import { ProductQty } from "../../data/data";
+import { ProductQty, ProductSizes } from "../../data/data";
 import { useCartContext }  from '../../context/CartContext';
 import { CartContextType } from "../../@types/cart";
+import Sizes from "./Sizes";
 
 const Form = () => {
 
@@ -76,7 +77,8 @@ const Form = () => {
 		</div>
 		{/* Qty select */}
 		<div className="
-		flex 
+		flex
+		flex-col 
 		justify-between 
 		items-center
 		my-4
@@ -88,8 +90,8 @@ const Form = () => {
 		lg:flex-row
 		lg:max-w-none
 		">
-		<p className="text-ml xl:text-xl">Sélectionnez une quantité:</p>
-		<select className="
+		<label className="text-ml xl:text-xl" htmlFor="ProductQty">Sélectionnez une quantité:</label>
+		<select id="ProductQty" className="
 		border-2
 		border-black
 		rounded 
@@ -113,6 +115,31 @@ const Form = () => {
 		ref={selectRef}
 		>
         <Options options={ProductQty} />
+		</select>
+		<label className="text-ml xl:text-xl" htmlFor="ProductSize">Sélectionnez une taille:</label>
+		<select id="ProductSize" className="
+		border-2
+		border-black
+		rounded 
+		max-w-[80px] 
+		min-h-14 
+		text-lg 
+		p-3
+		bg-white 
+		shadow-btnShadow
+		hover:shadow-xl
+		ease-in 
+		duration-200
+		
+		md:w-full
+		md:max-w-[300px]
+		md:text-center
+
+		lg:w-[400px]
+		lg:ml-3
+		"
+		>
+        <Sizes options={ProductSizes} />
 		</select>
 		</div>
 		{/* Buttons */}

@@ -4,16 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter:wght@200;400;700&display=swap');
 
 @component{
-  .slider::-webkit-scrollbar{
-    display: none;
-  }
-  .slider{
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
 }
-
+.slider::-webkit-scrollbar{
+  display: none;
+}
 .suggestedProducts::-webkit-scrollbar {
   display: none;
 
@@ -51,6 +45,10 @@ input[type="radio"].input-colorChoice + label {
 }
 input[type="radio"].input-colorChoice:checked + label {
   border: 2px solid #000;
+}
+
+option:disabled{
+  text-decoration:line-through;
 }
 
 .bounce{

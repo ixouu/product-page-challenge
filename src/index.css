@@ -143,5 +143,5 @@ input[type="radio"].input-colorChoice:checked + label {
 
 @keyframes marquee {
   0% { transform: translateX(0); }
-  50% { transform: translateX(-175%); }
+  50% { transform: translateX(-75%); }
 }

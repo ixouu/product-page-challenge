@@ -1,8 +1,9 @@
 import {useCartContext}  from '../../context/CartContext';
+import { CartContextInterface } from "../../@types/cart";
 
 const Cart = () => {
 
-  const {productsInCart} = useCartContext()
+  const {productsInCart} = useCartContext() as CartContextInterface
 
   return (
     <>

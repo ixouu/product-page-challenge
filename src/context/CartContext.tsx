@@ -6,15 +6,13 @@ export const ContextProvider = createContext<CartContextInterface | null>(null);
 export const CartContext = ({ children }: any) => {
 	const [productsInCart, setProductsInCart] = useState(0);
 
-    // allow to update product in cart state
+	// allow to update product in cart state
 	const UpdateCart = (qty: number) => {
 		setProductsInCart((prevState) => prevState + qty);
 	};
 
 	return (
-		<ContextProvider.Provider
-			value={{ productsInCart, UpdateCart }}
-		>
+		<ContextProvider.Provider value={{ productsInCart, UpdateCart }}>
 			{children}
 		</ContextProvider.Provider>
 	);

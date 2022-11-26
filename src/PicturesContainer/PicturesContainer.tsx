@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, Suspense } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../components/Modal/Modal";
+import Snipper from "../components/Spinner/Snipper";
 
 import productImg1 from "../assets/images/img1.webp";
 import productImg2 from "../assets/images/img2.webp";
@@ -73,84 +74,86 @@ const PicturesContainer = () => {
 
 	return (
 		<>
-			<div
-				className='slider
-         flex 
-         overflow-x-scroll
-         min-h-content
-         
-         md:grid
-		 md:auto-cols-max
-		 md:h-min
-         
-         lg:grid
-         lg:grid-cols-2 
-         lg:gap-2
-         lg:w-[55%]
-         lg:auto-cols-min
-
-         xl:grid
-         xl:gap-x-2
-         xl:w-[60%]
-         '
-				ref={containerRef}
-			>
-				{pictures.map((picture, index) => {
-					return (
-						<div
-							key={index}
-							className='relative'
-						>
-							<img
-								src={picture.src}
-								alt={picture.alt}
-								draggable='false'
-								className='
-                h-auto 
-                max-h-[550px]
-                max-w-[430px]
-
-                lg:max-h-[425px]
-
-                xl:h-fit
-                xl:max-h-full
-                xl:max-w-full
-                '
-							/>
-							<button
-								value={picture.src}
-								onClick={(e) => expandPicture(e)}
-								className='
-              w-3 
-              h-3 
-              flex 
-              justify-center 
-              items-center 
-              absolute 
-              top-2 
-              right-4 
-              bg-zinc-50 
-              p-5 
-              opacity-50
-              cursor-pointer
-              rounded-lg
-              hover:opacity-100
-              '
-							>
-								<FontAwesomeIcon
-									icon={faUpRightAndDownLeftFromCenter}
-								/>
-							</button>
-						</div>
-					);
-				})}
-			</div>
-			<div className='h-1 w-100 bg-slate-300'>
+			<Suspense fallback={<Snipper />}>
 				<div
-					className='h-1 w-auto bg-slate-900'
-					style={{ width: `${scrollBarWidth}%` }}
-				></div>
-			</div>
+					className='slider
+					flex 
+					overflow-x-scroll
+					min-h-content
+					
+					md:grid
+					md:auto-cols-max
+					md:h-min
+					
+					lg:grid
+					lg:grid-cols-2 
+					lg:gap-2
+					lg:w-[55%]
+					lg:auto-cols-min
+
+					xl:grid
+					xl:gap-x-2
+					xl:w-[60%]
+					'
+					ref={containerRef}
+				>
+					{pictures.map((picture, index) => {
+						return (
+							<div
+								key={index}
+								className='relative'
+							>
+								<img
+									src={picture.src}
+									alt={picture.alt}
+									draggable='false'
+									className='
+									h-auto 
+									max-h-[550px]
+									max-w-[430px]
+
+									lg:max-h-[425px]
+
+									xl:h-fit
+									xl:max-h-full
+									xl:max-w-full
+									'
+								/>
+								<button
+									value={picture.src}
+									onClick={(e) => expandPicture(e)}
+									className='
+									w-3 
+									h-3 
+									flex 
+									justify-center 
+									items-center 
+									absolute 
+									top-2 
+									right-4 
+									bg-zinc-50 
+									p-5 
+									opacity-50
+									cursor-pointer
+									rounded-lg
+									hover:opacity-100
+              						'
+								>
+									<FontAwesomeIcon
+										icon={faUpRightAndDownLeftFromCenter}
+									/>
+								</button>
+							</div>
+						);
+					})}
+				</div>
+				<div className='h-1 w-100 bg-slate-300'>
+					<div
+						className='h-1 w-auto bg-slate-900'
+						style={{ width: `${scrollBarWidth}%` }}
+					></div>
+				</div>
+			</Suspense>
 			{modalIsOpen && (
 				<Modal
 					onClose={() => setModalIsOpen(false)}

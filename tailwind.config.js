@@ -11,7 +11,8 @@ module.exports = {
       'mobileNav' : 'slide .4s ease-out forwards',
       'dropDownActive': 'displayDropdown .3s linear 1 forwards',
       'fade' : 'fade .5s ease-in 1 forwards',
-      'cartDown': 'cartDown 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) 1 forwards'
+      'cartDown': 'cartDown 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) 1 forwards',
+      'spinner' : 'spinner 1s ease-in-out infinite forwards'
       },
       keyframes :{
         slide: {
@@ -35,6 +36,10 @@ module.exports = {
           '75%':  {opacity: '1',transform: 'translate3d(0, -10px, 0)'},
           '90%':  {opacity: '1',transform: 'translate3d(0, 5px, 0)'},
           '100%':  {opacity: '1',transform: 'translate3d(0, à, 0)'},
+        },
+        spinner : {
+          '0%' : {transform:'translate(-60%, -30%) rotateY(0)'},
+          '100%' : {transform:'translate(-60%, -30%) rotateY(360deg)'}
         }
       }
     },

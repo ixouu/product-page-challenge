@@ -131,6 +131,7 @@ const Form = () => {
 		borderRadius={"4px"}
 		customClass={"border-black border-2 shadow-btnShadow hover:shadow-xl"}
 		handleClick={handleClick}
+		ariaLabel={"Ajouter ce produit à votre panier"}
 		/>
 		<Button
 		BtnRef={undefined}
@@ -147,6 +148,7 @@ const Form = () => {
 		borderRadius={"4px"}
 		customClass={"border-black border-2  shadow-btnShadow hover:shadow-xl"}
 		handleClick={handleClick}
+		ariaLabel={"Ajouter ce produit à votre panier et commander"}
 		/>
 	  </form>
   )

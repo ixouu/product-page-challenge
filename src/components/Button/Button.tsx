@@ -13,6 +13,7 @@ interface ButtonProps {
 	border: string | undefined;
 	borderRadius: string | undefined;
 	customClass: string | undefined;
+	ariaLabel: string;
 	BtnRef?: React.LegacyRef<HTMLButtonElement> | undefined;
 	handleClick : (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => void | undefined;
 }
@@ -31,6 +32,7 @@ const Button = ({
 		customClass,
 		handleClick,
 		BtnRef,
+		ariaLabel,
 	}: ButtonProps) => {
 
 	const addIcon = () => {
@@ -49,6 +51,7 @@ const Button = ({
 				type={type}
 				onClick={(e) => handleClick(e)}
 				ref={BtnRef}
+				aria-label={ariaLabel}
 				style={{
 					opacity:"1",
 					margin:".5rem 0",

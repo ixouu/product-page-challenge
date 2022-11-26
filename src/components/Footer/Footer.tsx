@@ -1,27 +1,11 @@
-import React from 'react'
-import Title from '../Title/Title';
-import Dropdown from '../Dropdown/Dropdown';
-import SocialMedias from '../SocialMedias/SocialMedias';
-
-// Reassurance Data
-const reassuranceData : { title: string; content: string }[] = [
-  {
-    title: "Service Client",
-    content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto rem doloremque animi nulla itaque assumenda."
-  },
-  {
-    title: "Nos promesses",
-    content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto rem doloremque animi nulla itaque assumenda."
-  },
-  {
-    title: "Nous contacter",
-    content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto rem doloremque animi nulla itaque assumenda."
-  },
-]
+import Dropdown from "../Dropdown/Dropdown";
+import SocialMedias from "../SocialMedias/SocialMedias";
+import { reassuranceData } from "../../data/data";
 
 const Footer = () => {
-  return (
-    <footer className='
+	return (
+		<footer
+			className='
     bg-gradient-to-tr
     from-zinc-900
     to-zinc-700
@@ -40,9 +24,11 @@ const Footer = () => {
     md:min-h-[300px]
 
     lg:py-8
-    '>
-      <div className='flex flex-col pt-4'>
-        <h6 className='
+    '
+		>
+			<div className='flex flex-col pt-4'>
+				<h6
+					className='
         font-cinzel 
         text-2xl
         bg-clip-text
@@ -52,11 +38,18 @@ const Footer = () => {
         to-sky-200
 
         xl:text-4xl
-        '>YOUVERSACE</h6>
-        <span className=' italic font-light'>Combinez style et confort au quotidien</span>
-      </div>
-      <section className="pt-2 min-h-40
-       md:w-full xl:pt-4 xl:text-xl">
+        '
+				>
+					YOUVERSACE
+				</h6>
+				<span className=' italic font-light'>
+					Combinez style et confort au quotidien
+				</span>
+			</div>
+			<section
+				className='pt-2 min-h-40
+       md:w-full xl:pt-4 xl:text-xl'
+			>
 				<>
 					{reassuranceData.map((service, index) => {
 						return (
@@ -64,16 +57,16 @@ const Footer = () => {
 								key={index}
 								title={service.title}
 								content={service.content}
-                color={"white"}
-                icons={"operande"}
+								color={"white"}
+								icons={"operande"}
 							/>
 						);
 					})}
 				</>
 			</section>
-      <SocialMedias/>
-    </footer>
-  )
-}
+			<SocialMedias />
+		</footer>
+	);
+};
 
-export default Footer
+export default Footer;

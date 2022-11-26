@@ -22,7 +22,7 @@ const SuggestedProducts = () => {
 
   return (
     <div className='mt-4 relative overflow-x-hidden'>
-      <h4 className='font-semibold text-xl'>Ces produits peuvent vous correspondre</h4>
+      <h4 className='font-semibold text-xl uppercase'>Recommandation pour vous</h4>
       <div className='track flex my-4'>
         {pictures.map((picture, index) => {
           return <img key={index} src={picture.src} alt={picture.alt} className="

@@ -10,12 +10,12 @@ const ProductDetails: {
 	{
 		title: "Description",
 		content:
-			" Lorem ipsum dolor, sit amet consectetur adipisicing elit. At molestiae ea obcaecati fuga nihil, nulla voluptates. Fuga nam magnam dolor! Nisi itaque voluptates maxime id.",
+			" Ce blouson colorblock col chemise possède 2 poches passepoilées avant, une fermeture pressionnée, des broderies à la poitrine,  un bas de corps et des bas de manches en bord-côtes et à rayures, un intérieur matelassé.",
 	},
 	{
 		title: "Livraison",
 		content:
-			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nobis ea id ad numquam nostrum vel, qui omnis ab nihil ex dolore aspernatur? Enim, ipsam!",
+			"Commandez aujourd'hui et recevez votre article sous 2 jours ouvrés. A votre domicile, au travail ou dans un point relais, Youversace vous facile votre quotidien et vous offre une livraison adaptée.",
 	},
 	{
 		title: "Matériaux",
@@ -36,6 +36,22 @@ const ProductDetails: {
 ];
 
 // Qty options 
-const ProductQty:number[] = [1,2,3,4,5,6,7,8,9,10]
+const ProductQty:number[] = [1,2,3,4,5,6,7,8,9,10];
 
-export {reviews, colors, ProductDetails, ProductQty};
+// Reassurance Data
+const reassuranceData : { title: string; content: string }[] = [
+	{
+	  title: "Service Client",
+	  content: "Quel que soit votre point de contact préféré, nos équipes se tiennent à votre disposition pour répondre à toutes vos questions du lundi au samedi de 10h à 18h."
+	},
+	{
+	  title: "Nos promesses",
+	  content: "Notre objectif, c’est que les vêtements restent en circulation aussi longtemps que possible et redonner de la valeur aux vêtements. Pour cela, nous réparons vos vêtements favoris."
+	},
+	{
+	  title: "CLICK & Collect",
+	  content: "Faites livrer votre commande dans votre magasin favori et retrouvez nos équipes pour vous sublimer. Nous conservons votre commande au chaud pendant 15 jours."
+	},
+  ]
+
+export {reviews, colors, ProductDetails, ProductQty, reassuranceData};

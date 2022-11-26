@@ -1,6 +1,4 @@
 import LikeIcon from "../LikeIcon/LikeIcon";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Form from "../Form/Form";
 import Dropdown from "../Dropdown/Dropdown";
 import PaiementOptions from "../PaiementOptions/PaiementOptions";
@@ -8,8 +6,28 @@ import Reviews from "../Review/Review";
 import SuggestedProducts from "../SuggestedProducts/SuggestedProducts";
 import LineBreaker from "./LineBreaker";
 import { ProductDetails } from "../../data/data";
+import { reviews } from "../../data/data";
+import Star from "../Star/Star";
 
 const InfosContainer = () => {
+
+		// return rating
+	const renderStar = (i:number) => {
+		const reduceRating : number = reviews.reduce((a,b) => a+b)/reviews.length;
+		const roundRating :number = Number(reduceRating.toFixed());
+		if (
+			(i === 1 && roundRating < 1) ||
+			(i === 2 && roundRating < 2) ||
+			(i === 3 && roundRating < 3) ||
+			(i === 4 && roundRating < 4) ||
+			(i === 5 && roundRating < 5)
+		) {
+			return <Star color={"grey"} />;
+		} else {
+			return <Star color={"goldenrod"} />;
+		}
+	};
+
 	return (
 		<>
 			<div
@@ -97,27 +115,12 @@ const InfosContainer = () => {
 				</div>
 				{/* Product ranking */}
 				<div className='my-4'>
-					<FontAwesomeIcon
-						icon={faStar}
-						className='text-yellow-400 border-solid text-lg mr-0.5 md:text-xl lg:text-2xl'
-					/>
-					<FontAwesomeIcon
-						icon={faStar}
-						className='text-yellow-400 border-solid text-lg mr-0.5 md:text-xl lg:text-2xl'
-					/>
-					<FontAwesomeIcon
-						icon={faStar}
-						className='text-yellow-400 border-solid text-lg mr-0.5 md:text-xl lg:text-2xl'
-					/>
-					<FontAwesomeIcon
-						icon={faStar}
-						className='text-yellow-400 border-solid text-lg mr-0.5 md:text-xl lg:text-2xl'
-					/>
-					<FontAwesomeIcon
-						icon={faStar}
-						className='text-stone-500 border-solid text-lg mr-0.5 md:text-xl lg:text-2xl'
-					/>
-					<span className='italic'>18 avis</span>
+					{renderStar(1)}
+					{renderStar(2)}
+					{renderStar(3)}
+					{renderStar(4)}
+					{renderStar(5)}
+					<span className='italic'>{reviews.length} avis</span>
 				</div>
 				<LineBreaker/>
 				{/* Form */}

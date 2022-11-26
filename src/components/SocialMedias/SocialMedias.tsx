@@ -5,7 +5,7 @@ import { faLinkedin} from "@fortawesome/free-brands-svg-icons";
 
 const SocialMedias = () => {
   return (
-    <section className='mt-4'>
+    <section className='mt-4 xl:mt-20 self-center'>
       <h6 className='
       font-semibold 
       text-lg
@@ -14,10 +14,10 @@ const SocialMedias = () => {
 
       lg:text-2xl
       '> Suivez notre actualité</h6>
-      <ul className='flex w-1/2 items-between text-4xl py-4'>
-        <li className='pr-3 md:pr-6'><button><FontAwesomeIcon icon={faFacebook}/></button></li>
-        <li className='pr-3 md:pr-6'><button><FontAwesomeIcon icon={faInstagram}/></button></li>
-        <li className='pr-3 md:pr-6'><button><FontAwesomeIcon icon={faLinkedin}/></button></li>
+      <ul className='flex w-[250px] items-between text-4xl py-4'>
+        <li className='pr-3 md:pr-6'><button><FontAwesomeIcon icon={faFacebook} className="hover:text-sky-600 hover:scale-110 ease-out duration-200"/></button></li>
+        <li className='pr-3 md:pr-6'><button><FontAwesomeIcon icon={faInstagram} className="hover:text-sky-600 hover:scale-110 ease-out duration-200"/></button></li>
+        <li className='pr-3 md:pr-6'><button><FontAwesomeIcon icon={faLinkedin} className="hover:text-sky-600 hover:scale-110 ease-out duration-200"/></button></li>
       </ul>
     </section>
   )

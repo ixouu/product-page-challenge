@@ -22,7 +22,9 @@ const reassuranceData : { title: string; content: string }[] = [
 const Footer = () => {
   return (
     <footer className='
-    bg-black 
+    bg-gradient-to-tr
+    from-zinc-900
+    to-zinc-700
     text-white 
     p-3
     min-h-[450px]
@@ -40,11 +42,21 @@ const Footer = () => {
     lg:py-8
     '>
       <div className='flex flex-col pt-4'>
-        <Title position='relative' color="white" fontSize='1rem'/>
-        <h6 className=' italic text-sm font-light'>Combinez style et confort au quotidien</h6>
+        <h6 className='
+        font-cinzel 
+        text-2xl
+        bg-clip-text
+        text-transparent
+        bg-gradient-to-r
+        from-sky-600
+        to-sky-200
+
+        xl:text-4xl
+        '>YOUVERSACE</h6>
+        <span className=' italic font-light'>Combinez style et confort au quotidien</span>
       </div>
       <section className="pt-2 min-h-40
-       md:w-full">
+       md:w-full xl:pt-4 xl:text-xl">
 				<>
 					{reassuranceData.map((service, index) => {
 						return (

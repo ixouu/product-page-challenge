@@ -12,7 +12,9 @@ module.exports = {
       'dropDownActive': 'displayDropdown .3s linear 1 forwards',
       'fade' : 'fade .5s ease-in 1 forwards',
       'cartDown': 'cartDown 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) 1 forwards',
-      'spinner' : 'spinner 1s ease-in-out infinite forwards'
+      'spinner' : 'spinner 1s ease-in-out infinite forwards',
+      'modalTitle' : 'modalTitle .7s linear 1 forwards'
+
       },
       keyframes :{
         slide: {
@@ -40,7 +42,12 @@ module.exports = {
         spinner : {
           '0%' : {transform:'translate(-60%, -30%) rotateY(0)'},
           '100%' : {transform:'translate(-60%, -30%) rotateY(360deg)'}
+        },
+        modalTitle : {
+          '0%' : {opacity: '0', transform:'scale3d(0.3, 0.3, 0.3)'},
+          '50%' : {opacity: '1'}
         }
+        
       }
     },
     fontFamily :{

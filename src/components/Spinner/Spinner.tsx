@@ -14,7 +14,7 @@ const Spinner = () => {
          md:w-[50%]
          
          lg:w-[55%]
-         lg:h-screen
+         
 
          xl:w-[60%]
          ">
@@ -27,6 +27,7 @@ const Spinner = () => {
             border-l-blue-900
             border-t-blue-800/90
             border-r-blue-700/80
+            border-b-blue-500
 
             md:w-20
             md:h-20
@@ -43,7 +44,8 @@ const Spinner = () => {
             left-1/2 
             top-1/2 
             -translate-x-[60%] 
-            -translate-y-[30%] 
+            -translate-y-[30%]
+            text-white 
             
             md:text-5xl
 

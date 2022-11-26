@@ -1,4 +1,4 @@
-import { useRef, createRef, useEffect } from "react";
+import { useRef, createRef, useEffect, useState } from "react";
 import Button from "../Button/Button";
 import Options from './Options'
 import { colors } from "../../data/data";
@@ -7,11 +7,15 @@ import { ProductQty, ProductSizes } from "../../data/data";
 import { useCartContext }  from '../../context/CartContext';
 import { CartContextType } from "../../@types/cart";
 import Sizes from "./Sizes";
+import CartModal from "../Modal/CartModal";
 
 const Form = () => {
 
 	const selectRef = useRef<HTMLSelectElement>(null);
 	const BtnRef = createRef<HTMLButtonElement>();
+
+	const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+
 
 	// remove bounce class when the button has been clicked
 	useEffect(() => {
@@ -32,7 +36,7 @@ const Form = () => {
 		e.preventDefault();
 		switch (e.currentTarget.type) {
 			case 'submit':
-				console.log('ok')
+					setModalIsOpen(true);
 				return
 			case 'button':
 				UpdateCart(Number(selectRef.current!.value));
@@ -44,14 +48,15 @@ const Form = () => {
 	}
 
   return (
+	<>
     <form className="
 	mt-4 
 	px-10 
 	flex 
 	w-full 
 	flex-col
-
 	items-center
+	lg:px-6
 	"
 	>
 		{/* Colors */}
@@ -76,71 +81,17 @@ const Form = () => {
 			</div>
 		</div>
 		{/* Qty select */}
-		<div className="
-		flex
-		flex-col 
-		justify-between 
-		items-center
-		my-4
-		w-full
-		
-		md:flex-col
-		md:max-w-[300px]
-
-		lg:flex-row
-		lg:max-w-none
-		">
-		<label className="text-ml xl:text-xl" htmlFor="ProductQty">Sélectionnez une quantité:</label>
-		<select id="ProductQty" className="
-		border-2
-		border-black
-		rounded 
-		max-w-[80px] 
-		min-h-14 
-		text-lg 
-		p-3
-		bg-white 
-		shadow-btnShadow
-		hover:shadow-xl
-		ease-in 
-		duration-200
-		
-		md:w-full
-		md:max-w-[300px]
-		md:text-center
-
-		lg:w-[400px]
-		lg:ml-3
-		"
-		ref={selectRef}
-		>
-        <Options options={ProductQty} />
-		</select>
-		<label className="text-ml xl:text-xl" htmlFor="ProductSize">Sélectionnez une taille:</label>
-		<select id="ProductSize" className="
-		border-2
-		border-black
-		rounded 
-		max-w-[80px] 
-		min-h-14 
-		text-lg 
-		p-3
-		bg-white 
-		shadow-btnShadow
-		hover:shadow-xl
-		ease-in 
-		duration-200
-		
-		md:w-full
-		md:max-w-[300px]
-		md:text-center
-
-		lg:w-[400px]
-		lg:ml-3
-		"
-		>
-        <Sizes options={ProductSizes} />
-		</select>
+		<div className="flex flex-col justify-between items-center my-4 w-full md:flex-col md:max-w-[300px] lg:flex-row lg:max-w-none">
+			<label className="text-ml lg:text-sm xl:text-xl" htmlFor="ProductQty">Sélectionnez une quantité:</label>
+			<select ref={selectRef}  id="ProductQty" className="border-2 border-black rounded max-w-[80px] min-h-14 text-lg p-3 bg-white shadow-btnShadow hover:shadow-xl ease-in duration-200 md:w-full md:max-w-[300px] md:text-center lg:w-[400px] lg:ml-3">
+				<Options options={ProductQty} />
+			</select>
+		</div>
+			<div className="flex flex-col justify-between items-center my-4 w-full md:flex-col md:max-w-[300px] lg:flex-row lg:max-w-none">
+			<label className="text-ml lg:text-sm xl:text-xl" htmlFor="ProductSize">Sélectionnez une taille:</label>
+			<select id="ProductSize" className="border-2 border-black rounded max-w-[80px] min-h-14 text-lg p-3 bg-white shadow-btnShadow hover:shadow-xl ease-in duration-200 md:w-full md:max-w-[300px] md:text-center lg:w-[400px] lg:ml-3">
+				<Sizes options={ProductSizes} />
+			</select>
 		</div>
 		{/* Buttons */}
 		<Button 
@@ -178,7 +129,10 @@ const Form = () => {
 		ariaLabel={"Ajouter ce produit à votre panier et commander"}
 		/>
 	  </form>
+	  {modalIsOpen && <CartModal onClose={() => setModalIsOpen(false)} />}
+	</>
   )
+  
 }
 
 export default Form

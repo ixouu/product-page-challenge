@@ -1,12 +1,12 @@
 import ReactDOM from 'react-dom';
 
 // onClose props unable to close the modal 
-interface Props {
+interface ModalProps {
   onClose : () => void;
   picture : string;
 }
 
-const Modal = ({ onClose, picture }:Props) => {
+const Modal = ({ onClose, picture }:ModalProps) => {
 
 
   return ReactDOM.createPortal(

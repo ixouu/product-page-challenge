@@ -3,8 +3,11 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter:wght@200;400;700&display=swap');
 
-@component{
+
+body{
+  font-family: 'inter', sans-serif;
 }
+
 .slider::-webkit-scrollbar{
   display: none;
 }
@@ -29,11 +32,6 @@ button:focus{
 .track:hover {
   animation-play-state: paused;
 }
-
-body{
-  font-family: 'inter', sans-serif;
-}
-
 
 input[type="radio"].input-colorChoice + label {
   padding: 0.3rem 0.5rem;

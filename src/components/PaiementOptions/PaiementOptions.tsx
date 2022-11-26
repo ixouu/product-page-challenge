@@ -25,13 +25,7 @@ const dividePrice = () => {
 }
 
   return (
-    <div className=' 
-    flex 
-    flex-col 
-    ml-3 
-    
-    md:ml-0
-    '>
+    <div className='flex flex-col ml-3 md:ml-0'>
         <div className='flex '>
             {paiementOpt.map((opt, index) => {
                 return (
@@ -42,23 +36,12 @@ const dividePrice = () => {
                             aria-label="Sélectionne une méthode de paiement"
                             onClick={(e) => handleClick(e)}
                             >
-                                <span className='text-white text-sm'>
-                                    x{opt}
-                                </span>
+                                <span className='text-white text-sm'>x{opt}</span>
                             </button>
                         </div>
                 )
             })}
-            <span className='
-            font-bold
-            italic 
-            text-xs 
-            pl-3 
-            leading-8
-
-            md:text-sm
-            md:leading-9
-            '>{optionSelected}x {dividePrice()} € sans frais.</span>
+            <span className='font-bold italic text-xs pl-3 leading-8 md:text-sm md:leading-9'>{optionSelected}x {dividePrice()} € sans frais.</span>
         </div>
         <span className='text-xs md:text-sm'>Payez en plusieurs fois !</span>
     </div>

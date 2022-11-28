@@ -8,6 +8,7 @@ import LineBreaker from "./LineBreaker";
 import { ProductDetails } from "../../data/data";
 import { reviews } from "../../data/data";
 import Star from "../Star/Star";
+import Discount from "../../Discount/Discount";
 
 const InfosContainer = () => {
 
@@ -30,6 +31,7 @@ const InfosContainer = () => {
 
 	return (
 		<>
+			<Discount />
 			<div className='mt-5 px-3 w-full md:flex md:flex-col md:w-[45%] md:pt-4 md:px-6 lg:w-[40%] lg:pt-6 lg:px-10'>
 				{/* Index Page */}
 				<div

@@ -40,13 +40,13 @@ const Dropdown = ({ title, content, color, icons }: DropdownProps) => {
 			</button>
 			{isDown && (<div className={isDown ? "animate-dropDownActive origin-top p-3 w-full" : ""}>
 							{typeof content === "string" ? (
-								<span className='max-w-md inline-block md:pt-2 xl:pt-4'>{content}</span>
+								<span className=' inline-block md:pt-2 xl:pt-4'>{content}</span>
 							) : (
 								content.map((opt, index) => {
 									return (
 										<ul
 											key={index}
-											className='flex flex-col max-w-md md:pt-2 xl:pt-4'
+											className='flex flex-col md:pt-2 xl:pt-4'
 										>
 											<li>
 												<span className='font-bold'>

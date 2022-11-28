@@ -40,18 +40,7 @@ const Navbar = () => {
             {menuTitles.map((title, index) => {
 					return (
 						<li key={index}> 
-                        <button className='
-                        animate-fade
-                        text-center 
-                        uppercase  
-                        py-3 
-                        px-3 
-                        hover:text-yellow-500
-                        duration-200
-                        ease-out
-
-                        md:p-2
-                        '
+                        <button className="animate-fade text-center uppercase py-3 px-3 hover:text-yellow-500 hover:before:scale-100 duration-200 ease-out relative before:content-[''] before:rounded-lg before:bg-black before:w-10 before:absolute before:bottom-1 before:h-1 before:ease-out before:duration-200 before:origin-left before:scale-x-0 md:p-2"
                         style={{animationDelay : `${animationDelay[index-1]}ms`}}>
                         {title}</button>
 					    </li>

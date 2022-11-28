@@ -3,14 +3,7 @@ import PicturesContainer from '../PicturesContainer/PicturesContainer';
 
 const Main = () => {
   return (
-    <main className='
-    flex
-    flex-col
-    min-h-screen
-    overflow-x-scroll
-    z-90
-    md:flex-row
-    '>
+    <main className='flex flex-col min-h-screen overflow-x-scroll md:flex-row'>
         <PicturesContainer/>
         <InfosContainer/>
     </main>

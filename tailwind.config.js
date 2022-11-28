@@ -21,6 +21,7 @@ module.exports = {
       'heartLeaving1' : 'heartLeaving1 1s linear forwards',
       'heartLeaving2' : 'heartLeaving2  1s .1s linear forwards',
       'heartLeaving3' : 'heartLeaving3  1s .2s linear forwards',
+      'validateCartBtn': 'validateCartBtn 700ms cubic-bezier(0.215, 0.61, 0.355, 1) 1',
       },
       keyframes :{
         mobileNav: {

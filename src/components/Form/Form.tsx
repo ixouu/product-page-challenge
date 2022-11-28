@@ -20,7 +20,7 @@ const Form = () => {
 	// remove bounce class when the button has been clicked
 	useEffect(() => {
 		const timeout = setTimeout(() => {
-			BtnRef.current?.classList.remove("bounce")
+			BtnRef.current?.classList.remove("animate-validateCartBtn", "bounce")
 		}, 2000);
 	  
 		return () => clearTimeout(timeout);
@@ -40,7 +40,7 @@ const Form = () => {
 				return
 			case 'button':
 				UpdateCart(Number(selectRef.current!.value));
-				BtnRef.current?.classList.add("bounce")
+				BtnRef.current?.classList.add("animate-validateCartBtn", "bounce")
 				break;
 			default:
 				break;

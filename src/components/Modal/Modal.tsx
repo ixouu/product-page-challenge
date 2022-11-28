@@ -17,7 +17,7 @@ const Modal = ({ onClose, picture }:ModalProps) => {
       onClick={onClose}
       id='modalImgContainer'
       className="
-      absolute 
+      fixed
       top-[50%]
       left-[50%] 
       -translate-x-1/2

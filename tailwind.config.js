@@ -9,7 +9,7 @@ module.exports = {
       },
       animation : {
       'mobileNav' : 'mobileNav .3s linear 1 forwards',
-      'dropDownActive': 'displayDropdown .3s linear .5s forwards',
+      'dropDownActive': 'displayDropdown .3s linear forwards',
       'mobileNavAfter':'mobileNavAfter .3s linear 1s forwards',
       'fade' : 'fade .5s ease-in 1 forwards',
       'cartDown': 'cartDown 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) 1 forwards',
@@ -31,7 +31,7 @@ module.exports = {
           '0%': {transform : 'scaleY(0)', opacity : '0'},
           '50%': {opacity : '1'},
           '80%': {transform : 'scaleY(0)'},
-          '100%' : {transform : 'translate3d(0, 0, 0) translateX(-50%)', opacity : '1'}
+          '100%' : {transform : 'translate3d(0, 0, 0)', opacity : '1'}
         },
         fade: {
           '0%': {transform : 'translate3d(0, -100%, 0)', opacity : '0'},

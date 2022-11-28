@@ -3,9 +3,7 @@ import React from "react";
 const Spinner = () => {
 	return (
         <>
-        <div className="
-        relative 
-        min-h-[250px] 
+        <div className="relative min-h-[250px] 
         min-w-18
          flex 
          items-center 

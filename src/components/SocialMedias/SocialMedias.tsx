@@ -5,7 +5,7 @@ import { faLinkedin} from "@fortawesome/free-brands-svg-icons";
 
 const SocialMedias = () => {
   return (
-    <section className='mt-4 xl:mt-20 self-center'>
+    <section className='mt-4 xl:mt-20'>
       <h6 className='
       font-semibold 
       text-lg

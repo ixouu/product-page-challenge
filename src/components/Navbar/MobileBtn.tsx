@@ -6,9 +6,7 @@ const MobileBtn: React.FC = () => {
 	const { isOpen, setIsOpen } = useMobileMenuContext();
 
 	// toggle Mobile menu
-	const handleClick = (
-		e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-	) => {
+	const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		e.preventDefault();
 		setIsOpen(!isOpen);
 	};
@@ -26,11 +24,12 @@ const MobileBtn: React.FC = () => {
 			{isOpen && (
 				<>
 					<MobileMenu />
-					<button 
-            className='fixed bottom-10 left-1/2 -ml-[4%] rounded-full h-14 w-14 bg-gradient-to-b from-zinc-900 to-blue-700 border-2 border-neutral-900 text-white text-2xl z-100 animate-mobileCloseBtn'
-            aria-label="Ferme le menu de navigation mobile"
-            onClick={(e) => handleClick(e)}
-            >
+					<button
+			 			id='Mobile-CloseBtn'
+						className='fixed bottom-10 left-1/2 -ml-[4%] rounded-full h-14 w-14 bg-gradient-to-b from-zinc-900 to-blue-700 border-2 border-neutral-900 text-white text-2xl z-100 animate-mobileCloseBtn'
+						aria-label="Ferme le menu de navigation mobile"
+						onClick={(e) => handleClick(e)}
+					>
 						X
 					</button>
 				</>

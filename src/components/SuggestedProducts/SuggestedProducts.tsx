@@ -25,16 +25,7 @@ const SuggestedProducts = () => {
       <h4 className='font-semibold text-xl uppercase'>Recommandation pour vous</h4>
       <div className='track flex my-4'>
         {pictures.map((picture, index) => {
-          return <img key={index} src={picture.src} alt={picture.alt} className="
-          w-[300px] 
-          h-[400px]
-          mx-2 
-          rounded 
-          cursor-pointer
-          lg:w-[375px]
-          lg:h-auto
-          xl:w-[450px]
-          "/>
+          return <img key={index} src={picture.src} alt={picture.alt} className="w-[300px] h-[400px] mx-2 rounded cursor-pointer lg:w-[375px] lg:h-auto xl:w-[450px]"/>
         })}
       </div>
     </div>

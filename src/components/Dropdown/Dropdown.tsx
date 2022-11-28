@@ -23,10 +23,10 @@ const Dropdown = ({ title, content, color, icons }: DropdownProps) => {
 
 	return (
 		<div
-			className='px-10 min-w-[300px] w-full flex  flex-col  items-center '
+			className='px-10 min-w-[300px] w-full flex flex-col items-center'
 			style={{ color: color && `${color}` }}
 		>
-			<div className='drop-head flex h-10 border-b border-b-slate-400 justify-between items-center w-full max-w-md'>
+			<div className='drop-head flex h-10 border-b border-b-slate-400 justify-between items-center w-full xl:py-4 2xl:py-8'>
 				<h4 className='pl-1 text-lg xl:text-xl'>{title}</h4>
 				<button
 					type='button'
@@ -44,35 +44,29 @@ const Dropdown = ({ title, content, color, icons }: DropdownProps) => {
 					)}
 				</button>
 			</div>
-			{isDown && (
-				<div
-					className={
-						isDown ? "animate-dropDownActive origin-top-center" : ""
-					}
-				>
-					{typeof content === "string" ? (
-						<span className='max-w-md inline-block'>{content}</span>
-					) : (
-						content.map((opt, index) => {
-							return (
-								<ul
-									key={index}
-									className='flex flex-col max-w-md'
-								>
-									<li>
-										<span className='font-bold'>
-											{opt.contentTitle}: 
-										</span>
-										<span className='max-w-md pl-[4px]'>
-											{opt.description}
-										</span>
-									</li>
-								</ul>
-							);
-						})
-					)}
-				</div>
-			)}
+			{isDown && (<div className={isDown ? "animate-dropDownActive origin-top p-3 w-full" : ""}>
+							{typeof content === "string" ? (
+								<span className='max-w-md inline-block md:pt-2 xl:pt-4'>{content}</span>
+							) : (
+								content.map((opt, index) => {
+									return (
+										<ul
+											key={index}
+											className='flex flex-col max-w-md md:pt-2 xl:pt-4'
+										>
+											<li>
+												<span className='font-bold'>
+													{opt.contentTitle}: 
+												</span>
+												<span className='max-w-md pl-[4px]'>
+													{opt.description}
+												</span>
+											</li>
+										</ul>
+									);
+								})
+							)}
+						</div>)}
 		</div>
 	);
 };

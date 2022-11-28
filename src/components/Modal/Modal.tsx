@@ -11,16 +11,17 @@ const Modal = ({ onClose, picture }:ModalProps) => {
 
   return ReactDOM.createPortal(
     <>
-      <div onClick={onClose} className='backdrop-blur-md w-full h-full fixed bg-cover bg-no-repeat z-200 top-0 '>
+      <div onClick={onClose} id='modalBlur' className='backdrop-blur-md w-full h-full fixed bg-cover bg-no-repeat z-2000 top-0 '>
       </div>
       <div 
-      onClick={onClose} 
+      onClick={onClose}
+      id='modalImgContainer'
       className="
       absolute 
       top-[50%]
       left-[50%] 
-      -translate-x-[50%] 
-      -translate-y-[50%]
+      -translate-x-1/2
+      -translate-y-1/2
       w-screen
       md:w-3/4
       xl:w-1/2

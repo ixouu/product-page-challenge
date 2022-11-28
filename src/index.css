@@ -37,12 +37,22 @@ input[type="radio"].input-colorChoice + label {
   padding: 0.3rem 0.5rem;
   width: 25px;
   height: 25px;
-  border-radius: 50%;
   border: 2px solid transparent;
   display: inline-block;
+  position: relative;
+  border-radius: 3px;
 }
-input[type="radio"].input-colorChoice:checked + label {
+input[type="radio"].input-colorChoice:checked + label{
   border: 2px solid #000;
+}
+input[type="radio"].input-colorChoice:checked + label::after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  bottom: -10px;
+  background-color: #000;
+  left: 0;
+  position: absolute;
 }
 
 option:disabled{
@@ -50,6 +60,15 @@ option:disabled{
 }
 nav{
   z-index: 1000;
+}
+#modalBlur{
+  z-index: 1100;
+}
+#modalImgContainer{
+  z-index: 1200;
+}
+#Mobile-CloseBtn{
+  z-index: 1100;
 }
 
 .bounce{

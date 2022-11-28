@@ -26,24 +26,18 @@ const Dropdown = ({ title, content, color, icons }: DropdownProps) => {
 			className='px-10 min-w-[300px] w-full flex flex-col items-center'
 			style={{ color: color && `${color}` }}
 		>
-			<div className='drop-head flex h-10 border-b border-b-slate-400 justify-between items-center w-full xl:py-4 2xl:py-8'>
+			<button className='drop-head flex h-10 border-b border-b-slate-400 justify-between items-center w-full xl:py-4 2xl:py-8' onClick={() => handleClick()} aria-label="Ouvre le menu">
 				<h4 className='pl-1 text-lg xl:text-xl'>{title}</h4>
-				<button
-					type='button'
-					onClick={() => handleClick()}
-					aria-label="Ouvre le menu"
-				>
-					{isDown ? (
-						<FontAwesomeIcon
-							icon={icons === "operande" ? faMinus : faChevronUp}
-						/>
-					) : (
-						<FontAwesomeIcon
-							icon={icons === "operande" ? faPlus : faChevronDown}
-						/>
-					)}
-				</button>
-			</div>
+				{isDown ? (
+					<FontAwesomeIcon
+						icon={icons === "operande" ? faMinus : faChevronUp}
+					/>
+				) : (
+					<FontAwesomeIcon
+						icon={icons === "operande" ? faPlus : faChevronDown}
+					/>
+				)}
+			</button>
 			{isDown && (<div className={isDown ? "animate-dropDownActive origin-top p-3 w-full" : ""}>
 							{typeof content === "string" ? (
 								<span className='max-w-md inline-block md:pt-2 xl:pt-4'>{content}</span>

@@ -49,30 +49,9 @@ const Form = () => {
 
   return (
 	<>
-    <form className="
-	mt-4 
-	px-10 
-	flex 
-	w-full 
-	flex-col
-	items-center
-	lg:px-6
-	"
-	>
+    <form className="mt-4 px-10 flex w-full flex-col items-center lg:px-6">
 		{/* Colors */}
-		<div className="
-		flex 
-		justify-between
-		items-center
-		my-4
-		w-full
-		
-		md:flex-col
-		md:max-w-[300px]
-
-		lg:flex-row
-		lg:max-w-none
-		">
+		<div className="flex justify-between items-center my-4 w-full md:flex-col md:max-w-[300px] lg:flex-row lg:max-w-none">
 		<p className="text-ml xl:text-xl">Choisissez la couleur :</p>
 			<div className="flex items-center ">
 				{colors.map((color, index) => {

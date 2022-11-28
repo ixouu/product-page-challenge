@@ -17,12 +17,8 @@ body{
 }
 
 button:focus{
-  outline: none;
+  outline: goldenrod
 }
-
-.heart1{animation: heartLeaving1 1s linear forwards;}
-.heart2{animation: heartLeaving2  1s .1s linear forwards;}
-.heart3{animation: heartLeaving2  1s .2s linear forwards;}
 
 .track{
   white-space: nowrap;
@@ -75,92 +71,4 @@ nav{
   animation : validateCartBtn 700ms cubic-bezier(0.215, 0.61, 0.355, 1) 1;
   color: white!important;
   background: linear-gradient(to bottom, #141517d0, #056b3b)!important;
-}
-
-
-@keyframes validateCartBtn {
-    0%{
-      transform: scale3d(0.3, 0.3, 0.3);
-    }
-    20% {
-      transform: scale3d(1.1, 1.1, 1.1);
-    }
-  
-    40% {
-      transform: scale3d(0.9, 0.9, 0.9);
-    }
-  
-    60% {
-      transform: scale3d(1.03, 1.03, 1.03);
-    }
-  
-    80% {
-      transform: scale3d(0.97, 0.97, 0.97);
-    }
-  
-    100% {
-      transform: scale3d(1, 1, 1);
-  }
-}
-
-@keyframes slide {
-  0%{
-    -webkit-transform: translate3d(0, -100%, 0) translateX(-50%);
-    transform: translate3d(0, -100%, 0) translateX(-50%);
-    opacity: 0;
-  }
-  90%{
-    opacity: 0.4;
-  }
-  95%{
-      opacity: 0.9;
-    }
-  100% {
-    -webkit-transform: translate3d(0, 0, 0)translateX(-50%);
-    transform: translate3d(0, 0, 0) translateX(-50%);
-    opacity: 1
-  }
-}
-
-@keyframes displayDropdown {
-  0%{
-      opacity: 0;
-      transform: scaleY(0)
-  }
-  50%{
-      opacity: 1;
-  }
-  80% {
-      transform: scaleY(1.1)
-  }
-  100% {
-      transform: scaleY(1);
-      opacity: 1;
-  }
-}
-
-@keyframes heartLeaving1 {
-  to {
-    transform: translateY(40px);
-    opacity: 0;
-  }
-}
-
-@keyframes heartLeaving2 {
-  to {
-    transform: translate(-20px, 20px)rotate(-45deg);
-    opacity: 0;
-  }
-}
-
-@keyframes heartLeaving3 {
-  to {
-    transform: translate(20px, -20px)rotate(45deg);
-    opacity: 0;
-  }
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(-75%); }
 }

@@ -8,7 +8,6 @@ interface ModalProps {
 
 const Modal = ({ onClose, picture }:ModalProps) => {
 
-
   return ReactDOM.createPortal(
     <>
       <div onClick={onClose} id='modalBlur' className='backdrop-blur-md w-full h-full fixed bg-cover bg-no-repeat z-2000 top-0 '>
@@ -16,18 +15,7 @@ const Modal = ({ onClose, picture }:ModalProps) => {
       <div 
       onClick={onClose}
       id='modalImgContainer'
-      className="
-      fixed
-      top-[50%]
-      left-[50%] 
-      -translate-x-1/2
-      -translate-y-1/2
-      w-screen
-      md:w-3/4
-      xl:w-1/2
-      max-w-[90vw]
-      md:max-h-[95vh]
-      ">
+      className="fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 border-2 border-zinc-900 w-fit rounded">
         <img 
         src={picture} 
         alt="Prévisualisation de l'artcile"

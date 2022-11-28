@@ -13,8 +13,7 @@ const Title = ({ color, position, fontSize }: titleProps) => {
         color: color && `${color}`,
         position: `${position}`,
         fontSize: `${fontSize}`
-        }}>
-        YOUVERSACE
+        }}><a href='#'>YOUVERSACE</a>
     </h1>
   )
 }

@@ -32,14 +32,11 @@ const InfosContainer = () => {
 		<>
 			<div className='mt-5 px-3 w-full md:flex md:flex-col md:w-[45%] md:pt-4 md:px-6 lg:w-[40%] lg:pt-6 lg:px-10'>
 				{/* Index Page */}
-				<span
-					className='
-				text-xs 
-				
-				md:text-sm'
+				<div
+					className='text-xs md:text-sm'
 				>
-					Acceuil / Blousons / Blouson Umani
-				</span>
+					<a href="#" className="hover:underline">Acceuil</a> / <a href="#" className="hover:underline">Blousons</a> / <span>Blouson Umani</span>
+				</div>
 				<div className='flex items-center justify-between'>
 					{/* Product title */}
 					<h2 className='text-xl font-semibold mt-2 md:text-2xl md:mt-4 lg:text-3xl lg:mt-6'>

@@ -45,8 +45,7 @@ const Reviews = () => {
 
   return (
     <section className='mt-4 lg:mt-8 lg:px-6 xl:px-16 2xl:px-0 2xl:max-w-[500px]' >
-        <h4 className='font-semibold text-xl uppercase'>Avis ({reviews.length})</h4>
-
+        <h4 className='font-semibold text-xl uppercase'>Avis (<a href='#' className='underline'>{reviews.length}</a>)</h4>
         <span className='text-2xl font-bold'>{average()} / 5</span>
         <ul className='flex flex-col-reverse w-full'>
             {reviewsBackgroundLength.map((note, index) =>{

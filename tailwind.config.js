@@ -17,6 +17,10 @@ module.exports = {
       'modalTitle' : 'modalTitle .7s linear 1 forwards',
       'mobileNavLinkSlideLeft': 'mobileNavLinkSlideLeft .8s linear forwards',
       'mobileCloseBtn': 'mobileCloseBtn .7s linear forwards',
+      'marquee': 'marquee 60s linear infinite',
+      'heartLeaving1' : 'heartLeaving1 1s linear forwards',
+      'heartLeaving2' : 'heartLeaving2  1s .1s linear forwards',
+      'heartLeaving3' : 'heartLeaving3  1s .2s linear forwards',
       },
       keyframes :{
         mobileNav: {
@@ -61,6 +65,33 @@ module.exports = {
           '0%' : {opacity: '0', transform:'scale(0)'},
           '50%': {opacity: '0.3'},
           '100%' : {opacity: '1', transform:'scale(1)'},
+        },
+        validateCartBtn : {
+          '0%': {transform: 'scale3d(0.3, 0.3, 0.3)'},
+          '20%': {transform: 'scale3d(1.1, 1.1, 1.1)'},
+          '40%': {transform: 'scale3d(0.9, 0.9, 0.9)'},
+          '60%': {transform: 'scale3d(1.03, 1.03, 1.03)'},
+          '80%': {transform: 'scale3d(0.97, 0.97, 0.97)'},
+          '100%': {transform: 'scale3d(1, 1, 1)'},
+        },
+        slide: {
+          '0%': { transform :'translate3d(0, -100%, 0) translateX(-50%)', opacity: '0' },
+          '90%': { opacity: '0.4' },
+          '95%': { opacity: '0.9' },
+          '100%': {transform :'translate3d(0, 0, 0) translateX(-50%)', opacity: '1' },
+        },
+        marquee: {
+          '0%' : {  transform: 'translateX(0)' },
+          '50%' : {  transform: 'translateX(-75%)' }
+        },
+        heartLeaving1 : {
+          'to' : { transform : 'translateY(40px)', opacity: '0' }
+        },
+        heartLeaving2 : {
+          'to' : { transform : 'translate(-25px, 25px)rotate(-45deg)', opacity: '0' }
+        },
+        heartLeaving3 : {
+          'to' : { transform : 'translate(-25px, -50px)rotate(45deg)', opacity: '0' }
         }
       }
     },

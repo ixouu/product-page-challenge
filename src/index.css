@@ -56,6 +56,10 @@ nav{
   z-index: 1100;
 }
 
-#discountBtn, #discountBtn-small, #modalImgContainer{
+#discountBtn, #discountBtn-small, #modalImgContainer, .socialMedia-link{
   z-index: 1200;
+}
+
+.socialMedia-li:hover .socialMedia-link{
+  color : white
 }

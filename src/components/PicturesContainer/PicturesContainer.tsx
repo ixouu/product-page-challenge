@@ -91,12 +91,13 @@ const PicturesContainer = () => {
 								placeholder={<Spinner />}
 								effect="opacity"
 								draggable='false'
-								className=' h-[550px] w-[430px] max-h-[550px] max-w-[430px] lg:h-fit lg:max-w-[270px] xl:max-h-full xl:max-w-full xl:h-fit  2xl:w-full'
+								className=' h-[550px] w-[430px] max-h-[550px] max-w-[430px] lg:h-fit lg:max-w-[270px] xl:max-h-full xl:max-w-full xl:h-fit  2xl:w-full hover:scale-95 duration-300'
 							/>
 							<button
 								value={picture.src}
 								onClick={(e) => expandPicture(e)}
 								className='w-3 h-3 flex justify-center items-center absolute top-2 right-4 bg-zinc-50 p-5 opacity-50 cursor-pointer rounded-lg hover:opacity-100'
+								aria-label="Aggrandi l'image"
 							>
 								<FontAwesomeIcon
 									icon={faUpRightAndDownLeftFromCenter}

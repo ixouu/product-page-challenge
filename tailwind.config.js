@@ -8,14 +8,14 @@ module.exports = {
         'btnShadow' : '0px 3px 8px rgba(0, 0, 0, 0.24)'
       },
       animation : {
-      'mobileNav' : 'mobileNav .3s linear 1 forwards',
+      'mobileNav' : 'mobileNav .3s ease-out 1 forwards',
+      'mobileNavBefore':'mobileNavBefore .6s ease-out forwards',
       'dropDownActive': 'displayDropdown .3s linear forwards',
-      'mobileNavAfter':'mobileNavAfter 1s linear 1s forwards',
       'fade' : 'fade .5s ease-in 1 forwards',
       'cartDown': 'cartDown 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) 1 forwards',
       'spinner' : 'spinner 1s ease-in-out infinite forwards',
       'modalTitle' : 'modalTitle .7s linear 1 forwards',
-      'mobileNavLinkSlideLeft': 'mobileNavLinkSlideLeft .8s linear forwards',
+      'mobileNavLinkSlideLeft': 'mobileNavLinkSlideLeft 1s linear forwards',
       'mobileCloseBtn': 'mobileCloseBtn .7s linear forwards',
       'marquee': 'marquee 60s linear infinite',
       'heartLeaving1' : 'heartLeaving1 1s linear forwards',
@@ -25,12 +25,12 @@ module.exports = {
       },
       keyframes :{
         mobileNav: {
-          '0%': {transform : 'scale(0)'},
-          '100%': {transform : 'scale(1)'}
+          '0%': {transform : 'scale(0)', width:'40px', height:'40px', borderRadius:'50%'},
+          '100%': {transform : 'scale(1)', width:'100%', height:'40vh', borderRadius:'0 0 200px 0'}
         },
-        mobileNavAfter: {
-          '0%': {transform : 'scale(0)'},
-          '100%': {transform : 'scale(1)'},
+        mobileNavBefore: {
+          '0%': {transform : 'scale(0)', width:'40px', height:'40px', borderRadius:'50%'},
+          '100%': {transform : 'scale(1)', width:'100%', height:'90%', borderRadius:'0 0 200px 0'},
         },
         displayDropdown: {
           '0%': {transform : 'scaleY(0)', opacity : '0'},
@@ -59,6 +59,7 @@ module.exports = {
         mobileNavLinkSlideLeft : {
           '0%': { opacity: '0', transform:'translateX(-250px)'},
           '50%': { opacity: '0.3'},
+          '70%' : {opacity: '0.6', transform:'translateX(20px)'},
           '100%': { opacity: '1', transform:'translateX(0)'},
         },
         mobileCloseBtn : {

@@ -13,7 +13,6 @@ body{
 }
 .suggestedProducts::-webkit-scrollbar {
   display: none;
-
 }
 
 .track{
@@ -53,20 +52,10 @@ option:disabled{
 nav{
   z-index: 1000;
 }
-#modalBlur{
+#modalBlur, #Mobile-CloseBtn{
   z-index: 1100;
-}
-#modalImgContainer{
-  z-index: 1200;
-}
-#Mobile-CloseBtn{
-  z-index: 1100;
-}
-#discountBtn{
-  z-index: 1200;
 }
 
-.bounce{
-  color: white!important;
-  background: linear-gradient(to bottom, #141517d0, #056b3b)!important;
+#discountBtn, #discountBtn-small, #modalImgContainer{
+  z-index: 1200;
 }

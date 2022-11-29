@@ -20,7 +20,8 @@ const Form = () => {
 	// remove bounce class when the button has been clicked
 	useEffect(() => {
 		const timeout = setTimeout(() => {
-			BtnRef.current?.classList.remove("animate-validateCartBtn", "bounce")
+			BtnRef.current?.classList.remove("animate-validateCartBtn", "ring-green-700")
+			BtnRef.current?.classList.add("ring-zinc-900")
 		}, 2000);
 	  
 		return () => clearTimeout(timeout);
@@ -40,7 +41,8 @@ const Form = () => {
 				return
 			case 'button':
 				UpdateCart(Number(selectRef.current!.value));
-				BtnRef.current?.classList.add("animate-validateCartBtn", "bounce")
+				BtnRef.current?.classList.remove("ring-zinc-900")
+				BtnRef.current?.classList.add("animate-validateCartBtn", "ring-green-700")
 				break;
 			default:
 				break;
@@ -60,7 +62,7 @@ const Form = () => {
 			</div>
 		</div>
 		{/* Qty select */}
-		<div className="flex flex-col justify-between items-center my-4 w-full md:flex-col md:max-w-[300px] lg:flex-row lg:max-w-none">
+		<div className="flex flex-col justify-between items-center my-4 w-full md:flex-col md:max-w-[300px] lg:flex-row lg:max-w-none ">
 			<label className="text-ml lg:text-sm xl:text-xl" htmlFor="ProductQty">Sélectionnez une quantité:</label>
 			<select ref={selectRef}  id="ProductQty" className="border-2 border-black rounded max-w-[80px] min-h-14 text-lg p-3 bg-white shadow-btnShadow hover:shadow-xl ease-in duration-200 md:w-full md:max-w-[300px] md:text-center lg:w-[400px] lg:ml-3">
 				<Options options={ProductQty} />
@@ -76,7 +78,7 @@ const Form = () => {
 		<Button 
 		BtnRef={BtnRef}
 		title={"AJOUTER AU PANIER"} 
-		color={"#FFFFFF"} 
+		color={"#FFFFFFF"} 
 		disabled={false} 
 		width={"100%"} 
 		height={"55px"} 
@@ -86,7 +88,7 @@ const Form = () => {
 		link={undefined}
 		border={undefined}
 		borderRadius={"4px"}
-		customClass={"border-black border-2 shadow-btnShadow hover:shadow-xl"}
+		customClass={"ring-2 ring-zinc-900 shadow-btnShadow hover:shadow-xl"}
 		handleClick={handleClick}
 		ariaLabel={"Ajouter ce produit à votre panier"}
 		/>
@@ -103,7 +105,7 @@ const Form = () => {
 		link={undefined}
 		border={"2px solid black"}
 		borderRadius={"4px"}
-		customClass={"border-black border-2  shadow-btnShadow hover:shadow-xl"}
+		customClass={"ring-2 ring-zinc-900 shadow-btnShadow hover:shadow-xl"}
 		handleClick={handleClick}
 		ariaLabel={"Ajouter ce produit à votre panier et commander"}
 		/>

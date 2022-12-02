@@ -17,7 +17,8 @@ const Radios = ({ colorTitle, colorCode, defaultValue }: RadioProps) => {
 			/>
 			<label
 				htmlFor={colorTitle}
-        style={{ background: `${colorCode}` }}
+				aria-label={`Selection de la couleur ${colorTitle}`}
+        		style={{ background: `${colorCode}` }}
 			>
 			</label>
 		</div>

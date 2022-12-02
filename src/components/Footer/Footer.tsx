@@ -7,9 +7,9 @@ const Footer = () => {
 		<footer
 			className='bg-gradient-to-tr from-zinc-900 to-zinc-700 text-white p-3 min-h-[450px] flex flex-col h-full justify-around md:grid md:grid-cols-3 md:justify-items-center md:py-6 md:min-h-[300px] lg:py-8'>
 			<div className='flex flex-col pt-4'>
-				<h5 className='font-cinzel text-2xl bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-200 xl:text-4xl'>
+				<span className='font-cinzel text-2xl bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-200 xl:text-4xl'>
 					YOUVERSACE
-				</h5>
+				</span>
 				<span className=' italic font-light'>
 					Combinez style et confort au quotidien
 				</span>

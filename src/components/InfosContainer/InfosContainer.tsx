@@ -104,7 +104,7 @@ const InfosContainer = () => {
 				<div className="w-full flex justify-center my-4">
 					<Button 
 						BtnRef={undefined}
-						title={"Retour aux blousons"} 
+						title={"Voir tous les blousons"} 
 						color={"#FFFFFFF"} 
 						disabled={false} 
 						width={"90%"} 
@@ -115,7 +115,7 @@ const InfosContainer = () => {
 						borderRadius={"4px"}
 						customClass={'uppercase ring-2 ring-gray-900 shadow-btnShadow hover:shadow-xl hover:bg-gray-900 hover:text-slate-50 hover:font-cinzel hover:-rotate-3'}
 						handleClick={handleClick}
-						ariaLabel={"Ajouter ce produit à votre panier"}
+						ariaLabel={"Retour au menu precedent"}
 					/>
 				</div>
 			</div>

@@ -21,7 +21,8 @@ module.exports = {
       'heartLeaving1' : 'heartLeaving1 1s linear forwards',
       'heartLeaving2' : 'heartLeaving2  1s .1s linear forwards',
       'heartLeaving3' : 'heartLeaving3  1s .2s linear forwards',
-      'validateCartBtn': 'validateCartBtn 700ms cubic-bezier(0.215, 0.61, 0.355, 1) 1',
+      'validateCartBtn': 'validateCartBtn .7s cubic-bezier(0.215, 0.61, 0.355, 1) 1',
+      'imgInModal': 'imgInModal .6s ease-out forwards'
       },
       keyframes :{
         mobileNav: {
@@ -94,6 +95,10 @@ module.exports = {
         heartLeaving3 : {
           'to' : { transform : 'translate(-25px, -50px)rotate(45deg)', opacity: '0' }
         },
+        imgInModal : {
+          '0%': { transform :'scaleX(-10%) scaleY(-20%) translate(-50%, -50%)', top: '50%', left:'50%'},
+          '100%': { transform :'scaleX(1) scaleY(1)  translate(-50%, -50%)' , top: '50%', left:'50%'},
+        }
       }
     },
     fontFamily :{

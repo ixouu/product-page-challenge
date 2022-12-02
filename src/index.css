@@ -52,12 +52,17 @@ option:disabled{
 nav{
   z-index: 1000;
 }
-#modalBlur, #Mobile-CloseBtn{
+#Mobile-CloseBtn{
   z-index: 1100;
 }
-
-#discountBtn, #discountBtn-small, #modalImgContainer, .socialMedia-link{
+#modalBlur{
+  z-index: 1300;
+}
+#discountBtn , #discountBtn-small{
   z-index: 1200;
+}
+#modalImgContainer, .socialMedia-link{
+  z-index: 1400;
 }
 
 .socialMedia-li:hover .socialMedia-link{

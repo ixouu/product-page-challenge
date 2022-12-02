@@ -27,7 +27,7 @@ const Dropdown = ({ title, content, color, icons }: DropdownProps) => {
 			style={{ color: color && `${color}` }}
 		>
 			<button className='drop-head flex h-10 border-b border-b-slate-400 justify-between items-center w-full xl:py-4 2xl:py-8' onClick={() => handleClick()} aria-label="Ouvre le menu">
-				<h4 className='pl-1 text-lg xl:text-xl'>{title}</h4>
+				<span className='pl-1 text-lg xl:text-xl'>{title}</span>
 				{isDown ? (
 					<FontAwesomeIcon
 						icon={icons === "operande" ? faMinus : faChevronUp}

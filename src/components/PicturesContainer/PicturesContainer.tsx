@@ -3,7 +3,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../Modal/Modal";
-import Spinner  from "../Spinner/Spinner"
 import productImg1 from "../../assets/images/img1.webp";
 import productImg2 from "../../assets/images/img2.webp";
 import productImg3 from "../../assets/images/img3.webp";
@@ -88,7 +87,6 @@ const PicturesContainer = () => {
 							<LazyLoadImage
 								src={picture.src}
 								alt={picture.alt}
-								placeholder={<Spinner />}
 								effect="opacity"
 								draggable='false'
 								className=' h-[550px] w-[430px] max-h-[550px] max-w-[430px] lg:h-fit lg:max-w-[270px] xl:max-h-full xl:max-w-full xl:h-fit  2xl:w-full hover:scale-95 duration-300'
@@ -96,7 +94,7 @@ const PicturesContainer = () => {
 							<button
 								value={picture.src}
 								onClick={(e) => expandPicture(e)}
-								className='duration-300 w-3 h-3 flex justify-center items-center absolute top-2 right-4 bg-zinc-50 p-5 opacity-50 cursor-pointer rounded-lg hover:opacity-100 group-hover:top-8 group-hover:right-6'
+								className='duration-300 w-3 h-3 flex justify-center items-center absolute top-6 right-6 bg-zinc-50 p-5 opacity-50 cursor-pointer rounded-lg hover:opacity-100'
 								aria-label="Aggrandi l'image"
 							>
 								<FontAwesomeIcon

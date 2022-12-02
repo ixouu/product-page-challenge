@@ -20,13 +20,13 @@ const PaiementFacilities = ()=> {
     },[])
 
   return (
-    <section ref={sectionRef} className="flex w-full justify-start items-center my-10">
+    <section ref={sectionRef} className="flex w-full justify-center items-center my-10 md:flex-row xl:mt-18">
       
-      <LazyLoadImage src={bitcoin} alt={"moyen de paiement bitcoin"} effect="opacity" height={"20px"} className={sectionIsVisible ? 'pl-3 duration-1000 delay-300 xl:h-[30px] 2xl:h-[45px] xl:pl-4 2xl:pl-5' : 'pl-3  duration-1000 delay-300 opacity-0 xl:h-[30px] 2xl:h-[45px] xl:pl-4 2xl:pl-5'}></LazyLoadImage>
+      <LazyLoadImage src={bitcoin} alt={"moyen de paiement bitcoin"} effect="opacity" className={sectionIsVisible ? 'ml-3 duration-1000 delay-300 h-[20px] xl:h-[25px] 2xl:h-[30px] xl:ml-4 2xl:ml-5' : 'pl-3 duration-1000 delay-300 opacity-0 xl:h-[30px] 2xl:h-[45px] xl:pl-4 2xl:pl-5'}></LazyLoadImage>
 
-      <LazyLoadImage src={mastercard} alt={"moyen de paiement mastercard"} effect="opacity" height={"20px"} className={sectionIsVisible ? 'pl-3 duration-1000 delay-300 xl:h-[30px] 2xl:h-[45px] xl:pl-4 2xl:pl-5' : 'pl-3  duration-1000 delay-300 opacity-0 xl:h-[30px] 2xl:h-[45px] xl:pl-4 2xl:pl-5'}></LazyLoadImage>
+      <LazyLoadImage src={mastercard} alt={"moyen de paiement mastercard"} effect="opacity"  className={sectionIsVisible ? 'ml-3 duration-1000  h-[20px] delay-300 xl:h-[25px] 2xl:h-[30px] xl:pl-4 2xl:pl-5' : 'pl-3 duration-1000 delay-300 opacity-0 xl:h-[30px] 2xl:h-[45px] xl:pl-4 2xl:pl-5'}></LazyLoadImage>
 
-      <LazyLoadImage src={paypal} alt={"moyen de paiement paypal"} effect="opacity" height={"20px"} className={sectionIsVisible ? 'pl-3 duration-1000 delay-300 xl:h-[30px] 2xl:h-[45px] xl:pl-4 2xl:pl-5' : 'pl-3  duration-1000 delay-300 opacity-0 xl:h-[30px] 2xl:h-[45px] xl:pl-4 2xl:pl-5'}></LazyLoadImage>
+      <LazyLoadImage src={paypal} alt={"moyen de paiement paypal"} effect="opacity" className={sectionIsVisible ? 'ml-3 duration-1000 delay-300 h-[20px] xl:h-[25px] 2xl:h-[30px] xl:pl-4 2xl:pl-5' : 'pl-3  duration-1000 delay-300 opacity-0 xl:h-[30px] 2xl:h-[45px] xl:pl-4 2xl:pl-5'}></LazyLoadImage>
 
     </section>
   )

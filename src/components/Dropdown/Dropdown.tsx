@@ -10,9 +10,10 @@ interface DropdownProps {
 	content: string | { contentTitle: string; description: string }[];
 	color?: string;
 	icons: string;
+	customClass: string | undefined;
 }
 
-const Dropdown = ({ title, content, color, icons }: DropdownProps) => {
+const Dropdown = ({ title, content, color, icons, customClass }: DropdownProps) => {
 	// State who's defining if the dropdown is down or not
 	const [isDown, setIsDown] = useState<boolean>(false);
 
@@ -23,10 +24,13 @@ const Dropdown = ({ title, content, color, icons }: DropdownProps) => {
 
 	return (
 		<div
-			className='px-10 min-w-[300px] w-full flex flex-col items-center'
+			className={customClass ? `${customClass}` : 'px-10 min-w-[300px] w-full flex flex-col items-center'}
 			style={{ color: color && `${color}` }}
 		>
-			<button className='drop-head flex h-10 border-b border-b-slate-400 justify-between items-center w-full xl:py-4 2xl:py-8' onClick={() => handleClick()} aria-label="Ouvre le menu">
+			<button 
+			className='drop-head flex h-10 border-b border-b-slate-400 justify-between items-center w-full xl:py-4 2xl:py-8'
+			onClick={() => handleClick()} 
+			aria-label="Ouvre le menu">
 				<span className='pl-1 text-lg xl:text-xl'>{title}</span>
 				{isDown ? (
 					<FontAwesomeIcon

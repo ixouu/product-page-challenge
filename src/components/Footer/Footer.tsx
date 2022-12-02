@@ -27,6 +27,7 @@ const Footer = () => {
 								content={service.content}
 								color={"white"}
 								icons={"operande"}
+								customClass={undefined}
 							/>
 						);
 					})}

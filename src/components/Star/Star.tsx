@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faPagelines } from "@fortawesome/free-brands-svg-icons";
 
 interface StarProps{
     color:string
@@ -8,8 +8,8 @@ interface StarProps{
 const Star = ({color}: StarProps) => {
   return (
     <FontAwesomeIcon
-    icon={faStar}
-    className=' border-solid text-lg mr-0.5 md:text-xl lg:text-2xl'
+    icon={faPagelines}
+    className=' border-solid text-lg mr-0.5 md:text-2xl lg:text-3xl lg:mt-4 lg:ml-1'
     style={{color : `${color}`}}
     />
   )

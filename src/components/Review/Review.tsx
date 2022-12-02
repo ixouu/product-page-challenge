@@ -1,16 +1,18 @@
-import {reviews} from '../../data/data'
+import {reviews} from '../../data/data';
+
+type AverageReturnType = number;
 
 const Reviews = () => {
 
     // calculate review average
-    const average = () => {
+    const average = ():AverageReturnType => {
         if (reviews.length === 0){
             return 0
         }else {
             const reduced = reviews.reduce((a,b) => a+b)/reviews.length
-            return reduced.toFixed(1)
+            return Number(reduced.toFixed(1))
         }
-    }
+    };
     
     // store reviews length 
     let reviewsBackgroundLength = [[1,0],[2,0],[3,0],[4,0],[5,0]];
@@ -45,10 +47,10 @@ const Reviews = () => {
     calcBackgroundWidth();
 
   return (
-    <section className='mt-4 lg:mt-8 lg:px-6 xl:px-16 2xl:px-0 2xl:max-w-[500px] text-gray-900' >
-        <h3 className='font-semibold text-xl uppercase'>Avis (<a href='#' className='underline' aria-label='Ouvre la liste des avis'>{reviews.length}</a>)</h3>
-        <span className='text-2xl font-bold'>{average()} / 5</span>
-        <ul className='flex flex-col-reverse w-full'>
+    <section className='px-10 mt-4 w-full lg:w-1/2 xl:w-full lg:mt-8 lg:ml-6 lg:px-6 xl:px-16  '>
+        <h3 className='font-semibold text-xl uppercase xl:w-1/2 xl:m-auto'>Avis (<a href='#' className='underline' aria-label='Ouvre la liste des avis'>{reviews.length}</a>)</h3>
+        <span className='text-2xl font-bold xl:w-1/2 xl:m-auto block'>{average()} / 5</span>
+        <ul className='flex flex-col-reverse w-full xl:w-1/2 xl:m-auto'>
             {reviewsBackgroundLength.map((note, index) =>{
                 return <li key={index} className='
                             flex

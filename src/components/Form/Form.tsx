@@ -51,9 +51,9 @@ const Form = () => {
 
   return (
 	<>
-    <form className="mt-4 px-10 flex w-full flex-col items-center lg:px-6">
+    <form className="mt-4 px-10 flex w-full flex-col items-center lg:px-6 h-[40%]">
 		{/* Colors */}
-		<div className="flex justify-between items-center my-4 w-full md:flex-col md:max-w-[300px] lg:flex-row lg:max-w-none">
+		<div className="flex justify-between items-center my-4 w-full md:flex-col md:max-w-[300px] lg:flex-row lg:max-w-[400px]">
 		<p className="text-ml xl:text-xl">Choisissez la couleur :</p>
 			<div className="flex items-center ">
 				{colors.map((color, index) => {
@@ -62,15 +62,15 @@ const Form = () => {
 			</div>
 		</div>
 		{/* Qty select */}
-		<div className="flex flex-col justify-between items-center my-4 w-full md:flex-col md:max-w-[300px] lg:flex-row lg:max-w-none ">
+		<div className="flex justify-between items-center my-4 w-full md:flex-col md:max-w-[300px] lg:flex-row lg:max-w-[400px]">
 			<label className="text-ml lg:text-sm xl:text-xl" htmlFor="ProductQty">Sélectionnez une quantité:</label>
-			<select ref={selectRef}  id="ProductQty" className="border-2 border-gray-900 rounded max-w-[80px] min-h-14 text-lg p-3 bg-white shadow-btnShadow hover:shadow-xl ease-in duration-200 md:w-full md:max-w-[300px] md:text-center lg:w-[400px] lg:ml-3">
+			<select ref={selectRef}  id="ProductQty" className="border-2 border-gray-900 rounded w-[120px] min-h-14 text-lg p-3 shadow-btnShadow hover:shadow-xl ease-in duration-200 text-center">
 				<Options options={ProductQty} />
 			</select>
 		</div>
-			<div className="flex flex-col justify-between items-center my-4 w-full md:flex-col md:max-w-[300px] lg:flex-row lg:max-w-none">
+			<div className="flex justify-between items-center my-4 w-full md:flex-col md:max-w-[300px] lg:flex-row  lg:max-w-[400px]">
 			<label className="text-ml lg:text-sm xl:text-xl" htmlFor="ProductSize">Sélectionnez une taille:</label>
-			<select id="ProductSize" className="border-2 border-gray-900 rounded max-w-[80px] min-h-14 text-lg p-3 bg-white shadow-btnShadow hover:shadow-xl ease-in duration-200 md:w-full md:max-w-[300px] md:text-center lg:w-[400px] lg:ml-3">
+			<select id="ProductSize" className="border-2 border-gray-900 rounded w-[120px] min-h-14 text-lg p-3 shadow-btnShadow hover:shadow-xl ease-in duration-200 text-center">
 				<Sizes options={ProductSizes} />
 			</select>
 		</div>
@@ -78,7 +78,7 @@ const Form = () => {
 		<Button 
 		BtnRef={BtnRef}
 		title={"AJOUTER AU PANIER"} 
-		color={"#FFFFFFF"} 
+		color={"rgb(243 244 246)"} 
 		disabled={false} 
 		width={"100%"} 
 		height={"55px"} 

@@ -33,7 +33,7 @@ const Button = ({
 
 
 		return <button
-				className={customClass && `${customClass} filterz`}
+				className={customClass && `${customClass}`}
 				disabled={disabled}
 				type={type}
 				onClick={(e) => handleClick(e)}

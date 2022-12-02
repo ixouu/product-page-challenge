@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef} from "react";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icons";
@@ -18,6 +18,9 @@ const PicturesContainer = () => {
 
 	// state to define the picture to pass through modal's props
 	const [picture, setPicture] = useState("");
+
+	// current Big Picture State
+	const  [currentBigPicture, setCurrentBigPicture] = useState(productImg1);
 
 	const pictures = [
 		{
@@ -54,63 +57,35 @@ const PicturesContainer = () => {
 		!modalIsOpen ? setModalIsOpen(true) : setModalIsOpen(false);
 	};
 
-	const [scrollBarWidth, setScrollBarWidth] = useState(0);
-
-	// calculate the width% of the scrollbar based on client's scrolling action
-	const handleScroll = () => {
-		const position = containerRef.current!.scrollLeft;
-		const maxWidth = containerRef.current!.scrollWidth;
-		const calcWidth = Math.round((position * 100) / maxWidth + 18);
-		setScrollBarWidth(calcWidth);
-	};
-
-	useEffect(() => {
-		const elementToListen = containerRef.current!;
-		elementToListen.addEventListener("scroll", handleScroll);
-		return () => {
-			elementToListen.removeEventListener("scroll", handleScroll);
-		};
-	}, [containerRef]);
 
 	return (
 		<>
-			<div
-				className='slider flex overflow-x-scroll min-h-content md:grid md:auto-cols-max md:h-min lg:grid lg:grid-cols-2  lg:gap-2 lg:w-[55%] lg:auto-cols-min xl: xl:gap-x-2 xl:w-[60%]'
-				ref={containerRef}
-			>
-				{pictures.map((picture, index) => {
-					return (
-						<div
-							key={index}
-							className='relative lg:max-w-[270px] xl:max-w-full  group'
-						>
-							<LazyLoadImage
-								src={picture.src}
-								alt={picture.alt}
-								effect="opacity"
-								draggable='false'
-								className=' h-[550px] w-[430px] max-h-[550px] max-w-[430px] lg:h-fit lg:max-w-[270px] xl:max-h-full xl:max-w-full xl:h-fit  2xl:w-full hover:scale-95 duration-300'
-							/>
-							<button
-								value={picture.src}
-								onClick={(e) => expandPicture(e)}
-								className='duration-300 w-3 h-3 flex justify-center items-center absolute top-6 right-6 bg-zinc-50 p-5 opacity-50 cursor-pointer rounded-lg hover:opacity-100'
-								aria-label="Aggrandi l'image"
-							>
-								<FontAwesomeIcon
-									icon={faUpRightAndDownLeftFromCenter}
+			<section className="flex flex-col items-center mt-6 xl:max-w-[50%]">
+				<div className="relative w-full flex items-center justify-center lg:w-[60%] xl:w-[90%]">
+				<LazyLoadImage src={currentBigPicture} width={'90%'} className="self-center rounded-md shadow-lg shadow-gray-400 "/>
+				<button value={currentBigPicture}
+						onClick={(e) => expandPicture(e)}
+						className='duration-300 w-3 h-3 flex justify-center items-center absolute top-6 right-10 bg-zinc-50 p-5 opacity-50 cursor-pointer rounded-lg hover:opacity-100 md:right-16 xl:top-8 xl:right-14 2xl:right-16'
+						aria-label="Aggrandi l'image">
+				<FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter}/>
+				</button>
+				</div>
+				<div className="flex py-4 slider overflow-x-scroll min-h-content w-full max-w-[90%] xl:w-auto md:flex md:justify-center" ref={containerRef}>
+					{pictures.map((picture, index) => {
+						return <div key={index} className="mx-2">
+								<LazyLoadImage
+									src={picture.src}
+									alt={picture.alt}
+									width={"110px"}
+									effect="opacity"
+									draggable='false'
+									onClick = { () => setCurrentBigPicture(picture.src)}
+									className= "rounded-2xl shadow-lg shadow-gray-400 xl:w-[150px]"
 								/>
-							</button>
-						</div>
-					);
-				})}
-			</div>
-			<div className='h-1 w-100 bg-slate-300'>
-				<div
-					className='h-1 w-auto bg-slate-900'
-					style={{ width: `${scrollBarWidth}%` }}
-				></div>
-			</div>
+								</div>
+					})}				
+				</div>
+			</section>
 			{modalIsOpen && (
 				<Modal
 					onClose={() => setModalIsOpen(false)}

@@ -8,7 +8,7 @@ const Header = () => {
 	return (
 		<>
 			<MobileMenuContext>
-				<header className='text-inter flex w-100 h-20 justify-between items-center px-[20px] shadow-lg relative z-100'>
+				<header className='bg-gray-100 text-inter flex w-100 h-20 justify-between items-center px-[20px] shadow-lg relative z-100'>
 					<Navbar />
 					<h1 className='font-cinzel absolute left-1/2 -translate-x-1/2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.35)] text-2xl xl:text-3xl 2xl:text-5xl'>
 						<a href='#'>YOUVERSACE</a>

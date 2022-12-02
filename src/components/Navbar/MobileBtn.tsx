@@ -18,8 +18,8 @@ const MobileBtn: React.FC = () => {
 				className='bg-transparent h-10'
 				onClick={(e) => handleClick(e)}
 			>
-				<div className='w-5 bg-black h-0.5 mb-1'></div>
-				<div className='w-3 bg-black h-0.5'></div>
+				<div className='w-5 bg-gray-900 h-0.5 mb-1'></div>
+				<div className='w-3 bg-gray-900 h-0.5'></div>
 			</button>
 			{isOpen && (
 				<>

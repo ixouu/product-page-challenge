@@ -9,10 +9,12 @@ import { ProductDetails } from "../../data/data";
 import { reviews } from "../../data/data";
 import Star from "../Star/Star";
 import Discount from "../../Discount/Discount";
+import Button from "../Button/Button";
+import PaiementFacilities from "../PaiementFacilities/PaiementFacilities";
 
 const InfosContainer = () => {
 
-		// return rating
+	// return rating
 	const renderStar = (i:number) => {
 		const reduceRating : number = reviews.reduce((a,b) => a+b)/reviews.length;
 		const roundRating :number = Number(reduceRating.toFixed());
@@ -28,6 +30,11 @@ const InfosContainer = () => {
 			return <Star color={"goldenrod"} />;
 		}
 	};
+
+	// handleClick of category button
+	const handleClick = () => {
+		return
+	}
 
 	return (
 		<>
@@ -48,7 +55,7 @@ const InfosContainer = () => {
 					<LikeIcon />
 				</div>
 				{/* Small line breaker */}
-				<div className='w-16 h-[1px] bg-black mt-2 md:w-[200px] md:mt-4 lg:w-[300px] lg:mt-6'></div>
+				<div className='w-16 h-[1px] bg-gray-900 mt-2 md:w-[200px] md:mt-4 lg:w-[300px] lg:mt-6'></div>
 				{/* Price */}
 				<div className='flex items-center mt-2 md:mt-4 md:flex-col md:items-start lg:mt-6'>
 					<div className="flex justify-center items-start text-stone-600">
@@ -91,6 +98,26 @@ const InfosContainer = () => {
 				<Reviews />
 				{/* SuggestedProduct */}
 				<SuggestedProducts />
+				{/* Paiement Facilities */}
+				<PaiementFacilities/>
+				{/* Button to return at the previous category */}
+				<div className="w-full flex justify-center my-4">
+					<Button 
+						BtnRef={undefined}
+						title={"Retour aux blousons"} 
+						color={"#FFFFFFF"} 
+						disabled={false} 
+						width={"90%"} 
+						height={"55px"} 
+						icon={undefined} 
+						type={"button"}
+						link={undefined}
+						borderRadius={"4px"}
+						customClass={'uppercase ring-2 ring-gray-900 shadow-btnShadow hover:shadow-xl hover:bg-gray-900 hover:text-slate-50 hover:font-cinzel hover:-rotate-3'}
+						handleClick={handleClick}
+						ariaLabel={"Ajouter ce produit à votre panier"}
+					/>
+				</div>
 			</div>
 		</>
 	);

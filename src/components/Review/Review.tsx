@@ -11,6 +11,7 @@ const Reviews = () => {
             return reduced.toFixed(1)
         }
     }
+    
     // store reviews length 
     let reviewsBackgroundLength = [[1,0],[2,0],[3,0],[4,0],[5,0]];
 
@@ -44,7 +45,7 @@ const Reviews = () => {
     calcBackgroundWidth();
 
   return (
-    <section className='mt-4 lg:mt-8 lg:px-6 xl:px-16 2xl:px-0 2xl:max-w-[500px]' >
+    <section className='mt-4 lg:mt-8 lg:px-6 xl:px-16 2xl:px-0 2xl:max-w-[500px] text-gray-900' >
         <h4 className='font-semibold text-xl uppercase'>Avis (<a href='#' className='underline'>{reviews.length}</a>)</h4>
         <span className='text-2xl font-bold'>{average()} / 5</span>
         <ul className='flex flex-col-reverse w-full'>
@@ -55,7 +56,7 @@ const Reviews = () => {
                             '>
                         {note[0]} 
                             <div className='h-1 w-full bg-slate-300 mx-2'>
-                                <div className='h-1 bg-black' style={{ width : `${note[1]}%`}}></div></div>
+                                <div className='h-1 bg-gray-900' style={{ width : `${note[1]}%`}}></div></div>
                         </li>
             })}
          

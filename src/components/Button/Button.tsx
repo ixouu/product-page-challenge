@@ -9,8 +9,6 @@ interface ButtonProps {
 	icon: string | undefined;
 	width: string;
 	height: string;
-	fontColor: string;
-	border: string | undefined;
 	borderRadius: string | undefined;
 	customClass: string | undefined;
 	ariaLabel: string;
@@ -24,10 +22,7 @@ const Button = ({
 		disabled,
 		width,
 		height,
-		icon,
-		fontColor,
 		type,
-		border,
 		borderRadius,
 		customClass,
 		handleClick,
@@ -35,14 +30,6 @@ const Button = ({
 		ariaLabel,
 	}: ButtonProps) => {
 
-	const addIcon = () => {
-		if (icon !== undefined) {
-			const iconElement = React.createElement("i", {
-				className: `${icon}`,
-			});
-			return iconElement;
-		}
-	};
 
 
 		return <button
@@ -59,14 +46,11 @@ const Button = ({
 					background: `${color}`,
 					width: `${width}`,
 					height: `${height}`,
-					color: `${fontColor}`,
-					border: `${border}`,
 					borderRadius: `${borderRadius}`,
 					maxWidth : '400px',
-					transition: "all .2s ease-in"
+					transition: "all .2s ease-in",
 				}}>
 				{title}
-				{addIcon()}
 			</button>
 			
 	};

@@ -83,7 +83,7 @@ const PicturesContainer = () => {
 					return (
 						<div
 							key={index}
-							className='relative lg:max-w-[270px] xl:max-w-full'
+							className='relative lg:max-w-[270px] xl:max-w-full  group'
 						>
 							<LazyLoadImage
 								src={picture.src}
@@ -96,7 +96,7 @@ const PicturesContainer = () => {
 							<button
 								value={picture.src}
 								onClick={(e) => expandPicture(e)}
-								className='w-3 h-3 flex justify-center items-center absolute top-2 right-4 bg-zinc-50 p-5 opacity-50 cursor-pointer rounded-lg hover:opacity-100'
+								className='duration-300 w-3 h-3 flex justify-center items-center absolute top-2 right-4 bg-zinc-50 p-5 opacity-50 cursor-pointer rounded-lg hover:opacity-100 group-hover:top-8 group-hover:right-6'
 								aria-label="Aggrandi l'image"
 							>
 								<FontAwesomeIcon

@@ -64,13 +64,13 @@ const Form = () => {
 		{/* Qty select */}
 		<div className="flex flex-col justify-between items-center my-4 w-full md:flex-col md:max-w-[300px] lg:flex-row lg:max-w-none ">
 			<label className="text-ml lg:text-sm xl:text-xl" htmlFor="ProductQty">Sélectionnez une quantité:</label>
-			<select ref={selectRef}  id="ProductQty" className="border-2 border-black rounded max-w-[80px] min-h-14 text-lg p-3 bg-white shadow-btnShadow hover:shadow-xl ease-in duration-200 md:w-full md:max-w-[300px] md:text-center lg:w-[400px] lg:ml-3">
+			<select ref={selectRef}  id="ProductQty" className="border-2 border-gray-900 rounded max-w-[80px] min-h-14 text-lg p-3 bg-white shadow-btnShadow hover:shadow-xl ease-in duration-200 md:w-full md:max-w-[300px] md:text-center lg:w-[400px] lg:ml-3">
 				<Options options={ProductQty} />
 			</select>
 		</div>
 			<div className="flex flex-col justify-between items-center my-4 w-full md:flex-col md:max-w-[300px] lg:flex-row lg:max-w-none">
 			<label className="text-ml lg:text-sm xl:text-xl" htmlFor="ProductSize">Sélectionnez une taille:</label>
-			<select id="ProductSize" className="border-2 border-black rounded max-w-[80px] min-h-14 text-lg p-3 bg-white shadow-btnShadow hover:shadow-xl ease-in duration-200 md:w-full md:max-w-[300px] md:text-center lg:w-[400px] lg:ml-3">
+			<select id="ProductSize" className="border-2 border-gray-900 rounded max-w-[80px] min-h-14 text-lg p-3 bg-white shadow-btnShadow hover:shadow-xl ease-in duration-200 md:w-full md:max-w-[300px] md:text-center lg:w-[400px] lg:ml-3">
 				<Sizes options={ProductSizes} />
 			</select>
 		</div>
@@ -83,10 +83,8 @@ const Form = () => {
 		width={"100%"} 
 		height={"55px"} 
 		icon={undefined} 
-		fontColor={"#000000"}
 		type={"button"}
 		link={undefined}
-		border={undefined}
 		borderRadius={"4px"}
 		customClass={"ring-2 ring-zinc-900 shadow-btnShadow hover:shadow-xl"}
 		handleClick={handleClick}
@@ -97,15 +95,13 @@ const Form = () => {
 		title={"ACHETER MAINTENANT"} 
 		color={"linear-gradient(to bottom, #000428, #004e92)"} 
 		disabled={false} 
-		width={"100%"} 
+		width={"100%"}
 		height={"55px"} 
 		icon={undefined} 
-		fontColor={"#FFFFFF"}
 		type={"submit"}
 		link={undefined}
-		border={"2px solid black"}
 		borderRadius={"4px"}
-		customClass={"ring-2 ring-zinc-900 shadow-btnShadow hover:shadow-xl"}
+		customClass={"ring-2 ring-zinc-900 shadow-btnShadow text-white hover:shadow-xl"}
 		handleClick={handleClick}
 		ariaLabel={"Ajouter ce produit à votre panier et commander"}
 		/>

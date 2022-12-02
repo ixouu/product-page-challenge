@@ -93,7 +93,7 @@ module.exports = {
         },
         heartLeaving3 : {
           'to' : { transform : 'translate(-25px, -50px)rotate(45deg)', opacity: '0' }
-        }
+        },
       }
     },
     fontFamily :{

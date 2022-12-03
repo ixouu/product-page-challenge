@@ -51,7 +51,7 @@ const Form = () => {
 
   return (
 	<>
-    <form className="mt-4 px-10 flex w-full flex-col items-center lg:px-6 h-[40%]">
+    <form className="mt-4 px-10 flex w-full flex-col items-center lg:px-6 h-[40%] lg:items-start">
 		{/* Colors */}
 		<div className="flex justify-between items-center my-4 w-full md:flex-col md:max-w-[300px] lg:flex-row lg:max-w-[400px]">
 		<p className="text-ml xl:text-xl">Choisissez la couleur :</p>

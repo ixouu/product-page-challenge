@@ -25,9 +25,9 @@ const pictures: {src: string, alt: string, discount: string | undefined}[] = [
 const SuggestedProducts = () => {
 
   return (
-    <div className='mt-4 relative overflow-x-hidden lg:self-center lg:mt-8'>
+    <div className='mt-4 relative overflow-x-hidden self-center lg:self-start lg:mt-8 w-[90%] '>
       <h4 className='font-semibold text-xl uppercase'>Recommandation pour vous</h4>
-      <div className='track flex my-4 animate-marquee'>
+      <div className='track flex my-4 animate-marquee lg:animate-none lg:my-8'>
         {pictures.map((picture, index) => {
           return <div  key={index} className="relative">
                     {picture.discount !== undefined ?<div className="absolute top-2 right-2 bg-gray-900 text-white rounded px-1 text-[12px] xl:text-sm xl:px-2  "><span>-{picture.discount}</span></div> : null}

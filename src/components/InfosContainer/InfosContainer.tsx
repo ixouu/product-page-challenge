@@ -34,7 +34,7 @@ const InfosContainer = () => {
 	return (
 		<>
 			<Discount />
-			<div className='mt-5 px-3 w-full md:flex md:flex-col md:pt-4 md:px-6 lg:w-[40%] lg:pt-6 lg:px-10'>
+			<div className='mt-5 px-3 w-full md:flex md:self-center md:flex-col md:pt-4 md:px-6 lg:w-[40%] lg:pt-6 lg:px-10'>
 				{/* Index Page */}
 				<div
 					className='text-xs md:text-sm'
